@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import "./navBar.css";
 import logo from "../../assets/svgviewer-output.svg";
 import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,24 +21,62 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isDarkTheme ? "dark-theme" : ""}`}>
       <div className="nav-container">
-        <div className="logo-container">
-          <a href="#" className="logo">
-            Logo
-          </a>
-        </div>
         <div className="menu-container">
           <ul className="menu">
             <li>
-              <a href="/">About me</a>
+              <Link
+                to="about-section"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                style={{ cursor: "pointer" }}
+              >
+                Sobre
+              </Link>
             </li>
             <li>
-              <a href="/about">Service</a>
+              <Link
+                to="service-section"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                style={{ cursor: "pointer" }}
+              >
+                Serviços
+              </Link>
             </li>
             <li>
-              <a href="/projects">Projects</a>
+              <Link
+                to="skills-section"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                style={{ cursor: "pointer" }}
+              >
+                Skills
+              </Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <Link
+                to="project-section"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                style={{ cursor: "pointer" }}
+              >
+                Projetos
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="contact-section"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                style={{ cursor: "pointer" }}
+              >
+                Contatos
+              </Link>
             </li>
           </ul>
         </div>
@@ -77,27 +115,76 @@ const Navbar = () => {
               <div className="menu-vertical">
                 <ul>
                   <li>
-                    <a href="/">About me</a>
+                    <Link
+                      id="teste"
+                      to="about-section"
+                      smooth={true}
+                      duration={500}
+                      offset={-70}
+                      style={{ cursor: "pointer" }}
+                      onClick={closeModal}
+                    >
+                      Sobre
+                    </Link>
                   </li>
                   <li>
-                    <a href="/about">Service</a>
+                    <Link
+                      to="service-section"
+                      smooth={true}
+                      duration={500}
+                      offset={-70}
+                      style={{ cursor: "pointer" }}
+                      onClick={closeModal}
+                    >
+                      Serviços
+                    </Link>
                   </li>
                   <li>
-                    <a href="/projects">Projects</a>
+                    <Link
+                      to="skills-section"
+                      smooth={true}
+                      duration={500}
+                      offset={-70}
+                      style={{ cursor: "pointer" }}
+                      onClick={closeModal}
+                    >
+                      Skills
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="project-section"
+                      smooth={true}
+                      duration={500}
+                      offset={-70}
+                      style={{ cursor: "pointer" }}
+                      onClick={closeModal}
+                    >
+                      Projetos
+                    </Link>
                   </li>
                   <li style={{ paddingBottom: "3rem" }}>
-                    <a href="/contact">Contact</a>
+                    <Link
+                      to="contact-section"
+                      smooth={true}
+                      duration={500}
+                      offset={-70}
+                      style={{ cursor: "pointer" }}
+                      onClick={closeModal}
+                    >
+                      Contatos
+                    </Link>
                   </li>
-                  <div className="theme-toggle">
-                    <img
-                      onClick={toggleTheme}
-                      style={{ width: "3rem" }}
-                      src={isDarkTheme ? sun : moon}
-                      alt={isDarkTheme ? "Light Theme" : "Dark Theme"}
-                      className="theme-icon"
-                    />
-                  </div>
                 </ul>
+                <div className="theme-toggle">
+                  <img
+                    onClick={toggleTheme}
+                    style={{ width: "3rem" }}
+                    src={isDarkTheme ? moon : sun}
+                    alt={isDarkTheme ? "Light Theme" : "Dark Theme"}
+                    className="theme-icon"
+                  />
+                </div>
               </div>
             </div>
           </div>

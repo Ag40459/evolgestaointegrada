@@ -1,57 +1,56 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-font-family: 'DM Sans', sans-serif;
-
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-size: 1.6rem;
-
+  font-size: 1.6rem;
 }
 
 button {
-    cursor: pointer;
-
+  cursor: pointer;
 }
 
 button:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
-h1{
-font-weight: 700;
-font-size: 5.6rem;
+h1 {
+  font-weight: 700;
+  font-size: 5.6rem;
 }
 
-h2{
-font-weight: 700;
-font-size: 4.2rem;
+h2 {
+  font-weight: 700;
+  font-size: 4.2rem;
 }
 
-h5{
-font-weight: 700;
-font-size: 1.9rem;
+h5 {
+  font-weight: 700;
+  font-size: 1.9rem;
 }
 
-a{
-    text-decoration: none;
-
+a {
+  text-decoration: none;
 }
 
-p{
-font-weight: 500;
-font-size: 2.4rem;
+p {
+  font-weight: 500;
+  font-size: 2.4rem;
 }
 
 :root {
---white-color: #FFF;
---black-color: #09090B;
---gray-color: #828282;
---green-color: #008000;
+  --white-color: #fff;
+  --black-color: #09090b;
+  --gray-color: #212121;
+  --deep-black: #171717;
+  --pure-black: #333333;
+  --green-color: #008000;
+  --neonGreen-color: #00df5e;
 }

@@ -4,6 +4,13 @@ import smile from "../../assets/smile.svg";
 import mail from "../../assets/mail.svg";
 import instagram from "../../assets/instagram.svg";
 import phone from "../../assets/phone.svg";
+import vector from "../../assets/vector.svg";
+import figma from "../../assets/figma.svg";
+import smartphone from "../../assets/smartphone.svg";
+import javaScript from "../../assets/javaScript.svg";
+import react from "../../assets/react.svg";
+import nextJs from "../../assets/nextjs.svg";
+import css from "../../assets/css.svg";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import "./home.css";
 
@@ -14,6 +21,10 @@ function Home() {
     document.body.style.backgroundColor = isDarkTheme
       ? "var(--white-color)"
       : "var(--black-color)";
+
+    document.body.style.color = isDarkTheme
+      ? "var(--pure-black)"
+      : "var(--white-color)";
   }, [isDarkTheme]);
 
   return (
@@ -36,7 +47,7 @@ function Home() {
           <img src={imgAbout} alt="About Me" className="image-about" />
         </div>
       </div>
-      <div className="about-section">
+      <div id="about-section" className="about-section">
         <h2>About Me</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quis
@@ -48,7 +59,7 @@ function Home() {
           perspiciatis placeat aliquid minima consequatur. Molestias, aut?
         </p>
       </div>
-      <div className="contact-images">
+      <div id="contact-section" className="contact-images">
         <div className="contact-images-icons">
           <div className="contact-icon">
             <img src={smile} alt="Smile Icon" />
@@ -87,30 +98,107 @@ function Home() {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="project-section">
-          <h1>Projetos</h1>
-          <div className="project-cards">
-            {/* Card 1 */}
-            <div className="project-card">
-              <h3>Projeto 1</h3>
-              <p>Descrição do Projeto 1</p>
-            </div>
+      <div id="project-section" className="project-section">
+        <h1>Projetos</h1>
+        <div className="project-cards">
+          <div className="project-card">
+            <div className="project-card-img"></div>
+            <h3>Projeto 1</h3>
 
-            {/* Card 2 */}
-            <div className="project-card">
-              <h3>Projeto 2</h3>
-              <p>Descrição do Projeto 2</p>
-            </div>
+            <p>Descrição do Projeto 1</p>
+          </div>
+        </div>
+        <div className="project-cards">
+          <div className="project-card">
+            <div className="project-card-img"></div>
+            <h3>Projeto 1</h3>
 
-            {/* Card 3 */}
-            <div className="project-card">
-              <h3>Projeto 3</h3>
-              <p>Descrição do Projeto 3</p>
-            </div>
+            <p>Descrição do Projeto 1</p>
+          </div>
+        </div>
+        <div className="project-cards">
+          <div className="project-card">
+            <div className="project-card-img"></div>
+            <h3>Projeto 1</h3>
+
+            <p>Descrição do Projeto 1</p>
+          </div>
+        </div>
+        <div className="project-cards">
+          <div className="project-card">
+            <div className="project-card-img"></div>
+            <h3>Projeto 1</h3>
+
+            <p>Descrição do Projeto 1</p>
+          </div>
+        </div>
+        <div className="project-cards">
+          <div className="project-card">
+            <div className="project-card-img"></div>
+            <h3>Projeto 1</h3>
+
+            <p>Descrição do Projeto 1</p>
           </div>
         </div>
       </div>
+
+      <div id="service-section" className="project-section">
+        <h1>Serviços</h1>
+
+        <div className="project-card-img">
+          <img
+            style={{ width: "6rem" }}
+            src={vector}
+            alt="seta para esquerda/direita"
+          />
+          <span>Criação de sites</span>
+          <div className="project-card-img-greenLine"></div>
+        </div>
+
+        <div className="project-card-img">
+          <img
+            style={{ width: "6rem" }}
+            src={figma}
+            alt="seta para esquerda/direita"
+          />
+          <span>Construção de API</span>
+          <div className="project-card-img-greenLine"></div>
+        </div>
+
+        <div className="project-card-img">
+          <img
+            style={{ width: "6rem" }}
+            src={smartphone}
+            alt="seta para esquerda/direita"
+          />
+          <span>Sites responsivos</span>
+          <div className="project-card-img-greenLine"></div>
+        </div>
+      </div>
+
+      <div id="skills-section" className="skills-section">
+        <h1>Minhas Skills</h1>
+
+        <div className="skills-card-img">
+          <img src={javaScript} alt="javaScript" />
+        </div>
+
+        <div className="skills-card-img">
+          <img src={react} alt="react" />
+        </div>
+
+        <div className="skills-card-img">
+          <img src={nextJs} alt="nextJs" />
+        </div>
+
+        <div className="skills-card-img">
+          <img src={css} alt="Css" />
+        </div>
+      </div>
+
+      <div id="contact-section">Contato</div>
     </div>
   );
 }

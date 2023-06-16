@@ -1,9 +1,9 @@
 .navbar {
-display: flex;
-justify-content: center;
-background-color: var(--white-color);
-height: 60px;
-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  background-color: var(--white-color);
+  height: 60px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 .nav-container {
   display: flex;
@@ -18,7 +18,7 @@ box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
-color: var(--black-color);
+  color: var(--black-color);
 }
 
 .menu-container {
@@ -44,19 +44,19 @@ color: var(--black-color);
 }
 
 .menu li a {
-color: var(--black-color);
-font-size: 2.5rem;
-font-weight: 500;
-text-decoration: none;
-font-family: 'DM Sans', sans-serif;
+  color: var(--black-color);
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
 }
 
 .menu-vertical li a {
-color: var(--black-color);
-font-size: 2.5rem;
-font-weight: 500;
-text-decoration: none;
-font-family: 'DM Sans', sans-serif;
+  color: var(--black-color);
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
 }
 
 .button-container {
@@ -83,14 +83,14 @@ font-family: 'DM Sans', sans-serif;
 }
 
 .hamburger {
-margin-right: 0.5rem;
-    position: relative;
+  margin-right: 0.5rem;
+  position: relative;
 }
 
 .hamburger-menu {
   cursor: pointer;
   transition: transform 0.3s ease;
- transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .modal {
@@ -113,9 +113,9 @@ margin-right: 0.5rem;
   max-height: 80vh;
   width: 20rem;
   overflow-y: auto;
-    position: absolute;
-    top: 9rem;
-    right: 2rem;
+  position: absolute;
+  top: 9rem;
+  right: 2rem;
 }
 
 .close {
@@ -127,8 +127,8 @@ margin-right: 0.5rem;
 }
 
 .menu-vertical {
-    min-height: 22rem;
-    width: 10rem;
+  min-height: 22rem;
+  width: 10rem;
   padding: 0;
   margin-top: 1rem;
 }
@@ -155,7 +155,6 @@ margin-right: 0.5rem;
 
 .hamburger-rotate {
   transform: rotate(-90deg);
-
 }
 
 @keyframes rotateAnimation {
@@ -175,12 +174,12 @@ margin-right: 0.5rem;
   cursor: pointer;
 }
 
-.theme-toggle{
+.theme-toggle {
   margin-right: 3rem;
-
+  margin-left: 5rem;
 }
 
-@media only screen and (min-width: 580px) {
+@media only screen and (min-width: 680px) {
   .hamburger-icon {
     display: none;
   }
@@ -189,14 +188,14 @@ margin-right: 0.5rem;
   .menu {
     display: none;
   }
-.hamburger-icon {
-     margin-right: 1rem;
+  .hamburger-icon {
+    margin-right: 1rem;
   }
   .button-container {
     display: none;
   }
 
-  .theme-button{
+  .theme-button {
     display: none;
-}
+  }
 }
