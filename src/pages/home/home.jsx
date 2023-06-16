@@ -137,41 +137,41 @@ function Home() {
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <h3>Projeto 1</h3>
+            <span>Projeto 1</span>
 
-            <p>Descrição do Projeto 1</p>
+            <span>Descrição do Projeto 1</span>
           </div>
         </div>
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <h3>Projeto 1</h3>
+            <span>Projeto 1</span>
 
-            <p>Descrição do Projeto 1</p>
+            <span>Descrição do Projeto 1</span>
           </div>
         </div>
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <h3>Projeto 1</h3>
+            <span>Projeto 1</span>
 
-            <p>Descrição do Projeto 1</p>
+            <span>Descrição do Projeto 1</span>
           </div>
         </div>
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <h3>Projeto 1</h3>
+            <span>Projeto 1</span>
 
-            <p>Descrição do Projeto 1</p>
+            <span>Descrição do Projeto 1</span>
           </div>
         </div>
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <h3>Projeto 1</h3>
+            <span>Projeto 1</span>
 
-            <p>Descrição do Projeto 1</p>
+            <span>Descrição do Projeto 1</span>
           </div>
         </div>
       </div>
