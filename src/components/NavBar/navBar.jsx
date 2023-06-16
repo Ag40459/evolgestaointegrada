@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${isDarkTheme ? "dark-theme" : ""}`}>
+    <nav id="top" className={`navbar ${isDarkTheme ? "dark-theme" : ""}`}>
       <div className="nav-container">
         <div className="menu-container">
           <ul className="menu">
