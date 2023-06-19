@@ -1,31 +1,53 @@
-import React, { useContext, useEffect } from "react";
-import imgAbout from "../../assets/imgAboutMe.svg";
-import smile from "../../assets/smile.svg";
+import React, { useContext, useEffect, useState } from "react";
+import Chat from "../../components/chat/chat";
+import profile from "../../assets/profileAg1.jpeg";
+import linkedin from "../../assets/linkedin.svg";
 import mail from "../../assets/mail.svg";
 import instagram from "../../assets/instagram.svg";
-import phone from "../../assets/phone.svg";
+import whatsapp from "../../assets/whatsapp.svg";
 import vector from "../../assets/vector.svg";
-import figma from "../../assets/figma.svg";
 import smartphone from "../../assets/smartphone.svg";
+import figma from "../../assets/figma.svg";
 import javaScript from "../../assets/javaScript.svg";
 import react from "../../assets/react.svg";
 import nextJs from "../../assets/nextjs.svg";
 import css from "../../assets/css.svg";
+import beekeeper from "../../assets/beekeeper.svg";
+import html5 from "../../assets/html5.svg";
+import insomnia from "../../assets/insomnia.svg";
+import mysql from "../../assets/mysql.svg";
+import nodejs from "../../assets/nodejs.svg";
+import python from "../../assets/python.svg";
 import { Link } from "react-scroll";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import "./home.css";
 
 function Home() {
   const { isDarkTheme } = useContext(ThemeContext);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [showText, setShowText] = useState(false);
+
+  const openWhatsApp = () => {
+    const phoneNumber = "5581985967343";
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+    window.open(whatsappURL, "_blank");
+  };
+
+  const openInstagram = () => {
+    window.open("https://www.instagram.com/agenor.torres10/", "_blank");
+  };
+
+  const openLinkedin = () => {
+    window.open(
+      "https://www.linkedin.com/in/agenor-torres-79bb7a132/",
+      "_blank"
+    );
+  };
 
   useEffect(() => {
     document.body.style.backgroundColor = isDarkTheme
-      ? "var(--white-color)"
+      ? "var(--white2-color)"
       : "var(--black-color)";
-
-    document.body.style.color = isDarkTheme
-      ? "var(--pure-black)"
-      : "var(--white-color)";
   }, [isDarkTheme]);
 
   useEffect(() => {
@@ -47,8 +69,6 @@ function Home() {
   return (
     <div className={`home-container ${isDarkTheme ? "dark-theme" : ""}`}>
       <div className="portfolio-section">
-        <h1 className="portfolio-title">Portfólio</h1>
-
         <div className="portfolio-content">
           <div className="portfolio-content-presentation">
             <h1 className="highlight-text">
@@ -57,13 +77,20 @@ function Home() {
             <p>Desenvolvedor Full Stack</p>
             <div className="portfolio-buttons">
               <button className="green-button">Download CV</button>
-              <button className="transparent-button">Entrar em contato</button>
+              <button
+                className="transparent-button"
+                onClick={() => setIsChatOpen(!isChatOpen)}
+              >
+                Entrar em contato
+              </button>
+              {isChatOpen && <Chat />}
             </div>
           </div>
 
-          <img src={imgAbout} alt="About Me" className="image-about" />
+          <img src={profile} alt="About Me" className="image-about" />
         </div>
       </div>
+
       <div id="about-section" className="about-section">
         <h1>Sobre </h1>
         <p style={{ textAlign: "justify" }}>
@@ -75,55 +102,52 @@ function Home() {
           compromisso e pontualidade. Trabalho bem em equipe e estou sempre em
           busca de resultados excepcionais. <br />
           <br />
-          Busco oportunidades como desenvolvedor full stack, com amor tanto pelo
-          back-end quanto pelo front-end. Quero alcançar a senioridade, gravar
-          vídeos de aulas para ajudar novos desenvolvedores e fazer parte de uma
-          comunidade em que sou embaixador (Comunicubos), produzindo conteúdo
-          para alunos. <br />
+          Sou desenvolvedor full stack, com amor tanto pelo back-end quanto pelo
+          front-end. <br />
           <br />
-          Tenho um projeto de portfólio com 8 projetos incríveis, que servem
-          como exemplo do meu trabalho e guia de estudo para outros. <br />
-          <br />
-          Estou pronto para somar valor à sua equipe. Vamos criar algo incrível
-          juntos?"
         </p>
       </div>
+
       <div id="contact-section" className="contact-images">
-        <h1>Contato</h1>
+        <h1>Contatos</h1>
         <div>
           <div className="contact-images-icons">
-            <div className="contact-icon">
-              <img src={smile} alt="Smile Icon" />
+            <div
+              onClick={openLinkedin}
+              className="contact-icon"
+              title="LinkedIn"
+            >
+              <img src={linkedin} alt="linkedin Icon" />
               <div className="contact-icon-text">
-                <h5>Linkedin</h5>
                 <br />
-                <h6>
-                  <a href="https://www.linkedin.com/in/agenor-torres-79bb7a132/">
-                    José Agenor
-                  </a>
-                </h6>
+                <h6>José Agenor</h6>
               </div>
             </div>
-            <div className="contact-icon">
+            <div className="contact-icon" title="E-mail">
               <img src={mail} alt="Mail Icon" />
               <div className="contact-icon-text">
-                <h5>E-mail</h5>
                 <br />
                 <h6>agenortorres10@gmail.com</h6>
               </div>
             </div>
-            <div className="contact-icon">
+            <div
+              onClick={openInstagram}
+              className="contact-icon"
+              title="Instagram"
+            >
               <img src={instagram} alt="Instagram Icon" />
               <div className="contact-icon-text">
-                <h5>Instagram</h5>
                 <br />
                 <h6>@agenortorres10</h6>
               </div>
             </div>
-            <div className="contact-icon">
-              <img src={phone} alt="Phone Icon" />
+            <div
+              onClick={openWhatsApp}
+              className="contact-icon"
+              title="Whatsapp"
+            >
+              <img src={whatsapp} alt="whatsapp Icon" />
               <div className="contact-icon-text">
-                <h5>Telefone</h5>
                 <br />
                 <h6>(81) 9 8596-7343</h6>
               </div>
@@ -134,98 +158,138 @@ function Home() {
 
       <div id="project-section" className="project-section">
         <h1>Projetos</h1>
+
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <span>Projeto 1</span>
-
-            <span>Descrição do Projeto 1</span>
+            <h3>Projeto 1</h3>
+            <h3>Descrição do Projeto 1</h3>
           </div>
         </div>
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <span>Projeto 1</span>
+            <h3>Projeto 1</h3>
 
-            <span>Descrição do Projeto 1</span>
+            <h3>Descrição do Projeto 1</h3>
           </div>
         </div>
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <span>Projeto 1</span>
+            <h3>Projeto 1</h3>
 
-            <span>Descrição do Projeto 1</span>
+            <h3>Descrição do Projeto 1</h3>
           </div>
         </div>
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <span>Projeto 1</span>
+            <h3>Projeto 1</h3>
 
-            <span>Descrição do Projeto 1</span>
+            <h3>Descrição do Projeto 1</h3>
           </div>
         </div>
         <div className="project-cards">
           <div className="project-card">
             <div className="project-card-img"></div>
-            <span>Projeto 1</span>
+            <h3>Projeto 1</h3>
 
-            <span>Descrição do Projeto 1</span>
+            <h3>Descrição do Projeto 1</h3>
           </div>
         </div>
       </div>
+
       <div id="service-section" className="project-section">
         <h1>Serviços</h1>
 
-        <div className="project-card-img">
+        <div className="project-section-card">
           <img
             style={{ width: "6rem" }}
             src={vector}
             alt="seta para esquerda/direita"
           />
-          <span>Criação de sites</span>
-          <div className="project-card-img-greenLine"></div>
+          <h2>Criação de sites</h2>
+          <div className="project-section-card-greenLine"></div>
         </div>
 
-        <div className="project-card-img">
+        <div className="project-section-card">
           <img
             style={{ width: "6rem" }}
             src={figma}
             alt="seta para esquerda/direita"
           />
-          <span>Construção de API</span>
-          <div className="project-card-img-greenLine"></div>
+          <h2>Construção de API</h2>
+          <div className="project-section-card-greenLine"></div>
         </div>
 
-        <div className="project-card-img">
+        <div className="project-section-card">
           <img
             style={{ width: "6rem" }}
             src={smartphone}
             alt="seta para esquerda/direita"
           />
-          <span>Sites responsivos</span>
-          <div className="project-card-img-greenLine"></div>
+          <h2>Sites responsivos</h2>
+          <div className="project-section-card-greenLine"></div>
         </div>
       </div>
 
       <div id="skills-section" className="skills-section">
         <h1>Minhas Skills</h1>
 
-        <div className="skills-card-img">
-          <img src={javaScript} alt="javaScript" />
+        <div className="skills-card-img" title="JavaScript">
+          <img src={javaScript} alt="JavaScript" />
+          <div className="skills-card-text"></div>
         </div>
 
-        <div className="skills-card-img">
-          <img src={react} alt="react" />
+        <div className="skills-card-img" title="React">
+          <img src={react} alt="React" />
+          <div className="skills-card-text"></div>
         </div>
 
-        <div className="skills-card-img">
-          <img src={nextJs} alt="nextJs" />
+        <div className="skills-card-img" title="Next.js">
+          <img src={nextJs} alt="Next.js" />
+          <div className="skills-card-text"></div>
         </div>
 
-        <div className="skills-card-img">
-          <img src={css} alt="Css" />
+        <div className="skills-card-img" title="CSS">
+          <img src={css} alt="CSS" />
+          <div className="skills-card-text"></div>
+        </div>
+
+        <div className="skills-card-img" title="Figma">
+          <img src={figma} alt="Figma" />
+          <div className="skills-card-text"></div>
+        </div>
+
+        <div className="skills-card-img" title="Beekeeper">
+          <img src={beekeeper} alt="Beekeeper" />
+          <div className="skills-card-text"></div>
+        </div>
+
+        <div className="skills-card-img" title="HTML5">
+          <img src={html5} alt="HTML5" />
+          <div className="skills-card-text"></div>
+        </div>
+
+        <div className="skills-card-img" title="Insomnia">
+          <img src={insomnia} alt="Insomnia" />
+          <div className="skills-card-text"></div>
+        </div>
+
+        <div className="skills-card-img" title="MySQL">
+          <img src={mysql} alt="MySQL" />
+          <div className="skills-card-text"></div>
+        </div>
+
+        <div className="skills-card-img" title="Node.js">
+          <img src={nodejs} alt="Node.js" />
+          <div className="skills-card-text"></div>
+        </div>
+
+        <div className="skills-card-img" title="Python">
+          <img src={python} alt="Python" />
+          <div className="skills-card-text"></div>
         </div>
       </div>
 

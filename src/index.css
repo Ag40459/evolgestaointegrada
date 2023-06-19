@@ -46,7 +46,8 @@ p {
 }
 
 :root {
-  --white-color: rgba(255, 255, 255, 1);
+  --white-color: rgb(255, 255, 255);
+  --white2-color: rgba(224, 231, 220, 0.521);
   --black-color: rgba(9, 9, 11, 1);
   --gray-color: rgba(33, 33, 33, 1);
   --deep-black: rgba(23, 23, 23, 1);
