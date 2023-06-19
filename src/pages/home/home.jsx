@@ -12,12 +12,17 @@ import javaScript from "../../assets/javaScript.svg";
 import react from "../../assets/react.svg";
 import nextJs from "../../assets/nextjs.svg";
 import css from "../../assets/css.svg";
+import postgresqlBlue from "../../assets/postgresqlBlue.svg";
+import postgresqlGreen from "../../assets/postgresqlGreen.svg";
 import beekeeper from "../../assets/beekeeper.svg";
 import html5 from "../../assets/html5.svg";
 import insomnia from "../../assets/insomnia.svg";
+import gitHub from "../../assets/gitHub.svg";
+import CurriculoAgenor from "../../assets/curriculoAgenor.pdf";
 import mysql from "../../assets/mysql.svg";
 import nodejs from "../../assets/nodejs.svg";
 import python from "../../assets/python.svg";
+import apiGif from "../../assets/api.gif";
 import { Link } from "react-scroll";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import "./home.css";
@@ -25,24 +30,6 @@ import "./home.css";
 function Home() {
   const { isDarkTheme } = useContext(ThemeContext);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [showText, setShowText] = useState(false);
-
-  const openWhatsApp = () => {
-    const phoneNumber = "5581985967343";
-    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
-    window.open(whatsappURL, "_blank");
-  };
-
-  const openInstagram = () => {
-    window.open("https://www.instagram.com/agenor.torres10/", "_blank");
-  };
-
-  const openLinkedin = () => {
-    window.open(
-      "https://www.linkedin.com/in/agenor-torres-79bb7a132/",
-      "_blank"
-    );
-  };
 
   useEffect(() => {
     document.body.style.backgroundColor = isDarkTheme
@@ -76,7 +63,13 @@ function Home() {
             </h1>
             <p>Desenvolvedor Full Stack</p>
             <div className="portfolio-buttons">
-              <button className="green-button">Download CV</button>
+              <a
+                href={CurriculoAgenor}
+                download="CurriculoAgenor.pdf"
+                className="green-button"
+              >
+                Download CV
+              </a>
               <button
                 className="transparent-button"
                 onClick={() => setIsChatOpen(!isChatOpen)}
@@ -90,7 +83,6 @@ function Home() {
           <img src={profile} alt="About Me" className="image-about" />
         </div>
       </div>
-
       <div id="about-section" className="about-section">
         <h1>Sobre </h1>
         <p style={{ textAlign: "justify" }}>
@@ -107,22 +99,10 @@ function Home() {
           <br />
         </p>
       </div>
-
       <div id="contact-section" className="contact-images">
         <h1>Contatos</h1>
         <div>
           <div className="contact-images-icons">
-            <div
-              onClick={openLinkedin}
-              className="contact-icon"
-              title="LinkedIn"
-            >
-              <img src={linkedin} alt="linkedin Icon" />
-              <div className="contact-icon-text">
-                <br />
-                <h6>José Agenor</h6>
-              </div>
-            </div>
             <div className="contact-icon" title="E-mail">
               <img src={mail} alt="Mail Icon" />
               <div className="contact-icon-text">
@@ -130,41 +110,78 @@ function Home() {
                 <h6>agenortorres10@gmail.com</h6>
               </div>
             </div>
-            <div
-              onClick={openInstagram}
-              className="contact-icon"
-              title="Instagram"
+            <a
+              href="https://www.linkedin.com/in/agenor-torres-79bb7a132/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <img src={instagram} alt="Instagram Icon" />
-              <div className="contact-icon-text">
-                <br />
-                <h6>@agenortorres10</h6>
+              <div className="contact-icon" title="LinkedIn">
+                <img src={linkedin} alt="linkedin Icon" />
+                <div className="contact-icon-text">
+                  <br />
+                  <h6>Agenor Torres</h6>
+                </div>
               </div>
-            </div>
-            <div
-              onClick={openWhatsApp}
-              className="contact-icon"
-              title="Whatsapp"
+            </a>
+            <a
+              href="https://www.github.com/Ag40459"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <img src={whatsapp} alt="whatsapp Icon" />
-              <div className="contact-icon-text">
-                <br />
-                <h6>(81) 9 8596-7343</h6>
+              <div className="contact-icon" title="Git Hub">
+                <img src={gitHub} alt="Git Hub Logo" />
+                <div className="contact-icon-text">
+                  <br />
+                  <h6>agenortorres10</h6>
+                </div>
               </div>
-            </div>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send?phone=5581985967343"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact-icon" title="Whatsapp">
+                <img src={whatsapp} alt="whatsapp Icon" />
+                <div className="contact-icon-text">
+                  <br />
+                  <h6>(81) 9 8596-7343</h6>
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/agenor.torres10/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact-icon" title="Instagram">
+                <img src={instagram} alt="Instagram Icon" />
+                <div className="contact-icon-text">
+                  <br />
+                  <h6>@agenortorres10</h6>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
-
       <div id="project-section" className="project-section">
         <h1>Projetos</h1>
 
         <div className="project-cards">
-          <div className="project-card">
-            <div className="project-card-img"></div>
-            <h3>Projeto 1</h3>
-            <h3>Descrição do Projeto 1</h3>
-          </div>
+          <a
+            href="https://github.com/Ag40459/projetoEcommerce-back"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="project-card">
+              <div className="project-card-img">
+                <img src={apiGif} alt="" />
+              </div>
+              <h3>Projeto Back-end</h3>
+              <h3>API REST Projeto E-commerce</h3>
+            </div>
+          </a>
         </div>
         <div className="project-cards">
           <div className="project-card">
@@ -199,7 +216,6 @@ function Home() {
           </div>
         </div>
       </div>
-
       <div id="service-section" className="project-section">
         <h1>Serviços</h1>
 
@@ -216,24 +232,19 @@ function Home() {
         <div className="project-section-card">
           <img
             style={{ width: "6rem" }}
-            src={figma}
-            alt="seta para esquerda/direita"
+            src={postgresqlGreen}
+            alt="postgresql verde"
           />
           <h2>Construção de API</h2>
           <div className="project-section-card-greenLine"></div>
         </div>
 
         <div className="project-section-card">
-          <img
-            style={{ width: "6rem" }}
-            src={smartphone}
-            alt="seta para esquerda/direita"
-          />
+          <img style={{ width: "6rem" }} src={smartphone} alt="Smartphone" />
           <h2>Sites responsivos</h2>
           <div className="project-section-card-greenLine"></div>
         </div>
       </div>
-
       <div id="skills-section" className="skills-section">
         <h1>Minhas Skills</h1>
 
@@ -291,8 +302,12 @@ function Home() {
           <img src={python} alt="Python" />
           <div className="skills-card-text"></div>
         </div>
-      </div>
 
+        <div className="skills-card-img" title="Postgresql">
+          <img src={postgresqlBlue} alt="Postgresql" />
+          <div className="skills-card-text"></div>
+        </div>
+      </div>
       <Link to="top" smooth={true} duration={500} className="top-button">
         Topo
       </Link>

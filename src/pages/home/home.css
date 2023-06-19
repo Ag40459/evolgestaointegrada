@@ -176,10 +176,15 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 35rem;
-  height: 24rem;
+  height: 28rem;
   align-items: center;
   justify-content: center;
   background-color: var(--pure-black);
+}
+
+.project-card h3:hover {
+  color: var(--blue-color);
+  cursor: pointer;
 }
 
 .service-section {
@@ -205,14 +210,13 @@ h3 {
   width: 30rem;
   height: 19rem;
   background-color: var(--deep-black);
-  /* border: 1px solid var(--pure-black); */
 }
 
 .project-card-img img {
+  width: 30rem;
+  height: 19rem;
   font-weight: 500;
   font-size: 2.4rem;
-  margin-left: 2rem;
-  margin-top: 2rem;
   color: #fff;
 }
 .project-card-img-greenLine,

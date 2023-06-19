@@ -56,7 +56,7 @@
 .menu li a:hover,
 .menu-vertical li a:hover,
 #link-about:hover {
-  color: rgb(23, 46, 146);
+  color: var(--blue-color);
 }
 .menu-vertical {
   width: auto;
