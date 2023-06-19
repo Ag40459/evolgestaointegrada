@@ -46,11 +46,12 @@ p {
 }
 
 :root {
-  --white-color: #fff;
-  --black-color: #09090b;
-  --gray-color: #212121;
-  --deep-black: #171717;
-  --pure-black: #333333;
-  --green-color: #008000;
-  --neonGreen-color: #00df5e;
+  --white-color: rgba(255, 255, 255, 1);
+  --black-color: rgba(9, 9, 11, 1);
+  --gray-color: rgba(33, 33, 33, 1);
+  --deep-black: rgba(23, 23, 23, 1);
+  --pure-black: rgba(51, 51, 51, 1);
+  --green-color: rgba(0, 128, 0, 1);
+  --neonGreen-color: rgba(0, 223, 94, 0.6);
+  --metallic-color: rgba(192, 192, 192, 0.95);
 }

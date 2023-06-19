@@ -26,8 +26,9 @@
 
 .portfolio-content {
   width: 90vw;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
   margin-top: 10rem;
 }
 
@@ -130,7 +131,7 @@ a {
 }
 
 .image-about {
-  width: 50rem;
+  width: 100%;
   height: auto;
 }
 
@@ -250,7 +251,7 @@ span {
   justify-content: center;
   align-items: center;
 }
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 40rem) {
   .portfolio-section {
     display: flex;
     flex-direction: column;
