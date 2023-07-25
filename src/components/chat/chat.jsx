@@ -56,6 +56,7 @@ function Chat() {
               X
             </button>
           </div>
+
           <div className="chatbot-body">
             {weatherData && (
               <div className="chatbot-message bot-message">
