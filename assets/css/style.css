@@ -124,18 +124,16 @@ body {
 }
 
 
-
-
-
-/*-----------------------------------*\ 
- * #REUSED STYLE
-\*-----------------------------------*/
-
 .container {
   padding: 0 15px;
 }
 
-.h1,
+
+.logo img {
+  width: 80px;
+}
+
+*/ .h1,
 .h2,
 .h3 {
   font-weight: var(--fw-600);
@@ -186,18 +184,16 @@ body {
   background: hsla(0, 0%, 100%, 0.1);
 }
 
-
-
-
-
-/*-----------------------------------*\ 
- * #HEADER
-\*-----------------------------------*/
-
 header {
   position: relative;
-  padding: 35px 0;
   z-index: 2;
+
+  background: linear-gradient(145deg, #f0f0f0, #cccccc);
+  box-shadow: 4px 4px 8px #bbbbbb, -4px -4px 8px #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+
+
 }
 
 header .container {
@@ -261,14 +257,6 @@ header .container {
   display: none;
 }
 
-
-
-
-
-/*-----------------------------------*\ 
- * #HERO
-\*-----------------------------------*/
-
 .hero {
   position: relative;
   padding: 130px 0 140px;
@@ -305,13 +293,6 @@ header .container {
   z-index: -1;
 }
 
-
-
-
-
-/*-----------------------------------*\ 
- * #ABOUT
-\*-----------------------------------*/
 
 .about {
   position: relative;
@@ -395,13 +376,6 @@ header .container {
 }
 
 
-
-
-
-/*-----------------------------------*\ 
- * #FEATURES
-\*-----------------------------------*/
-
 .features {
   padding: 120px 0;
   text-align: center;
@@ -442,13 +416,10 @@ header .container {
   font-size: var(--fs-4);
 }
 
+.item-text {
+  text-align: justify;
+}
 
-
-
-
-/*-----------------------------------*\ 
- * #CTA
-\*-----------------------------------*/
 
 .cta {
   padding: 120px 0;
@@ -490,14 +461,6 @@ header .container {
   color: var(--white);
   margin-inline: auto;
 }
-
-
-
-
-
-/*-----------------------------------*\ 
- * #CONTACT
-\*-----------------------------------*/
 
 .contact {
   margin-bottom: 120px;
@@ -546,20 +509,21 @@ textarea {
   resize: vertical;
 }
 
-
-
-
-
-/*-----------------------------------*\ 
- * #FOOTER
-\*-----------------------------------*/
-
 footer {
-  background: var(--white-2);
+  background: linear-gradient(145deg, #f0f0f0, #cccccc);
+  box-shadow: 4px 4px 8px #bbbbbb, -4px -4px 8px #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+
+footer img {
+  margin-top: 25px;
 }
 
 .footer-top {
-  padding: 80px 0 50px;
+  /* padding: 80px 0 50px; */
+  /* border: 3px solid red; */
 }
 
 .footer-brand {
@@ -631,14 +595,6 @@ footer .logo {
   color: var(--french-rose);
 }
 
-
-
-
-
-/*-----------------------------------*\ 
- * #GO TO TOP
-\*-----------------------------------*/
-
 .go-top {
   position: fixed;
   bottom: 30px;
@@ -665,39 +621,120 @@ footer .logo {
   pointer-events: all;
 }
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 15%;
+  right: 30px;
+  z-index: 1000;
+  background-color: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.whatsapp-button.active {
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.whatsapp-button ion-icon {
+  font-size: 24px;
+}
+
+.form-container {
+  width: 70%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.gallery-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.gallery {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  white-space: nowrap;
+}
+
+.gallery-pair {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 800px;
+  justify-content: space-between;
+}
+
+.gallery-image {
+  width: 48%;
+  height: auto;
+  margin: 0 5px;
+  border-radius: 10px;
+}
+
+.gallery-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.gallery-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 
-
-
-/*-----------------------------------*\ 
- * #RESPONSIVE
-\*-----------------------------------*/
-
-/**
- * responsive for larger than 450px 
- */
 
 @media (min-width: 450px) {
 
-  /**
-   * CUSTOM PROPERTY 
-   */
-
   :root {
-
-    /**
-     * typography
-     */
 
     --fs-1: 60px;
 
   }
 
-
-
-  /**
-   * REUESED STYLE 
-   */
 
   .h1,
   .h2 {
@@ -708,22 +745,10 @@ footer .logo {
     padding-block: 15px;
   }
 
-
-
-  /**
-   * HEADER 
-   */
-
   .navbar {
     left: auto;
     width: 300px;
   }
-
-
-
-  /**
-   * HERO 
-   */
 
   .hero {
     padding: 140px 0 160px;
@@ -735,41 +760,10 @@ footer .logo {
   }
 
 
-
-  /**
-   * ABOUT 
-   */
-
-  .about-card .card-title {
-    padding-inline: 40px;
-  }
-
-  .about-bottom-banner {
-    max-width: 400px;
-    margin-inline: auto;
-    margin-bottom: 40px;
-  }
-
-  .about-bottom-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-bottom {
-    justify-content: center;
-  }
-
-
   .features .h2 {
     --fs-2: 32px;
   }
 
-
-
-  /**
-   * CTA
-   */
 
   .cta-title {
     --fs-1: 42px;
@@ -791,11 +785,6 @@ footer .logo {
   }
 
 
-
-  /**
-   * CONTACT
-   */
-
   .contact-title {
     --fs-2: 32px;
   }
@@ -808,29 +797,12 @@ footer .logo {
 }
 
 
-
-
-
-/**
- * responsive for larger than 560px 
- */
-
 @media (min-width: 560px) {
-
-  /**
-   * REUESED STYLE 
-   */
 
   .container {
     max-width: 550px;
     margin-inline: auto;
   }
-
-
-
-  /**
-   * HEADER
-   */
 
   .navbar-wrapper {
     position: relative;
@@ -840,12 +812,6 @@ footer .logo {
     top: calc(100% + 15px);
     right: 0;
   }
-
-
-
-  /**
-   * HERO, ABOUT
-   */
 
   .hero-content,
   .about-bottom-content {
@@ -863,11 +829,6 @@ footer .logo {
   }
 
 
-
-  /**
-   * FOOTER
-   */
-
   .footer-brand {
     margin-bottom: 40px;
   }
@@ -880,24 +841,9 @@ footer .logo {
 }
 
 
-
-
-
-/**
- * responsive for larger than 768px 
- */
-
 @media (min-width: 768px) {
 
-  /**
-   * CUSTOM PROPERTY 
-   */
-
   :root {
-
-    /**
-     * typography
-     */
 
     --fs-2: 35px;
     --fs-4: 20px;
@@ -905,20 +851,9 @@ footer .logo {
   }
 
 
-
-  /**
-   * REUSED STYLE
-   */
-
   .container {
     max-width: 740px;
   }
-
-
-
-  /**
-   * ABOUT
-   */
 
   .about-list {
     grid-template-columns: 1fr 1fr;
@@ -936,41 +871,18 @@ footer .logo {
     padding-inline: 0;
   }
 
-
-
-  /**
-   * CONTACT
-   */
-
   .contact-title {
     --fs-2: 42px;
   }
 
 }
 
-
-
-
-
-/**
- * responsive for larger than 1024px 
- */
-
 @media (min-width: 1024px) {
-
-  /**
-   * REUSED STYLE
-   */
 
   .container {
     max-width: 950px;
   }
 
-
-
-  /**
-   * HEADER
-   */
 
   .navbar-menu-btn {
     display: none;
@@ -1003,12 +915,6 @@ footer .logo {
     display: block;
   }
 
-
-
-  /**
-   * HERO
-   */
-
   .hero-content {
     max-width: 550px;
   }
@@ -1024,12 +930,6 @@ footer .logo {
     background: url("../images/hero-banner.png") no-repeat;
     background-size: contain;
   }
-
-
-
-  /**
-   * ABOUT
-   */
 
   .about-top .section-text {
     max-width: 650px;
@@ -1057,11 +957,6 @@ footer .logo {
   }
 
 
-
-  /**
-   * FEATURES
-   */
-
   .features :is(.section-title, .section-text) {
     max-width: 650px;
     margin-inline: auto;
@@ -1071,6 +966,7 @@ footer .logo {
     display: flex;
     align-items: center;
     gap: 50px;
+    justify-content: space-between;
   }
 
   .features-item-banner {
@@ -1080,29 +976,17 @@ footer .logo {
 
   .feature-item-content {
     width: 50%;
-    text-align: left;
+    text-align: center;
   }
 
   .features-item:last-child {
     flex-direction: row-reverse;
   }
 
-
-
-  /**
-   * CTA
-   */
-
   .cta-card>* {
     max-width: 500px;
     margin-inline: auto;
   }
-
-
-
-  /**
-   * CONTACT
-   */
 
   .contact .container {
     display: flex;
@@ -1122,12 +1006,6 @@ footer .logo {
   .contact-form {
     width: 50%;
   }
-
-
-
-  /**
-   * FOOTER
-   */
 
   .footer-top .container {
     display: flex;

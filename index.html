@@ -24,7 +24,7 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="./assets/images/logo.png" alt="Funel logo">
+        <img src="./assets/images/logoEvol.jpeg" alt="Funel logo">
       </a>
 
       <div class="navbar-wrapper">
@@ -54,6 +54,10 @@
             </li>
 
             <li class="nav-item">
+              <a href="#promotion" class="nav-link">Promoção</a>
+            </li>
+
+            <li class="nav-item">
               <a href="#contact" class="nav-link">Contato</a>
             </li>
 
@@ -69,17 +73,9 @@
 
   </header>
 
-
-
-
-
   <main>
 
     <article>
-
-      <!-- 
-        - #HERO
-      -->
 
       <section class="hero" id="home">
         <div class="container">
@@ -92,7 +88,8 @@
               TIRE SUAS DÚVIDAS E RECEBA INSIGHTS PODEROSOS PARA DESTRAVAR DE VEZ AS VENDAS DA SUA LOJA NO IFOOD.
             </p>
 
-            <button class="btn btn-primary">FALE COM ESPECIALISTA EM IFOOD</button>
+            <button class="btn btn-primary" id="contact-whatsapp">FALE COM NOSSA EQUIPE</button>
+
 
           </div>
 
@@ -102,14 +99,6 @@
 
         <img src="./assets/images/bg.png" alt="shape" class="shape-content">
       </section>
-
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
 
       <section class="about">
         <div class="container">
@@ -182,45 +171,43 @@
 
           </div>
 
-          <div class="about-bottom" id="result">
-            <input type="radio" name="carousel" id="carousel-1" class="carousel-toggle" checked>
-            <input type="radio" name="carousel" id="carousel-2" class="carousel-toggle">
-            <input type="radio" name="carousel" id="carousel-3" class="carousel-toggle">
-            <input type="radio" name="carousel" id="carousel-4" class="carousel-toggle">
-            <input type="radio" name="carousel" id="carousel-5" class="carousel-toggle">
-            <div class="about-bottom-content">
-              <h2 class="h2 section-title">Nossos Resultados</h2>
-              <div class="carousel">
-                <div class="carousel-slide" id="slide-1">
-                  <img src="./assets/images/resultadoVania1.png" alt="cliente1resultado1">
-                  <img src="./assets/images/resultadoVania2.png" alt="cliente1resultado2">
+          <div class="gallery-container">
+            <h2 class="h2 section-title" id="result">Nossos Resultados</h2>
+
+            <button class="gallery-btn prev" onclick="scrollGallery(-1)">&#10094;</button>
+            <div class="gallery-wrapper">
+              <div class="gallery">
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoVania1.png" alt="cliente1resultado1" class="gallery-image">
+                  <img src="./assets/images/resultadoVania2.png" alt="cliente1resultado2" class="gallery-image">
                 </div>
-                <div class="carousel-slide" id="slide-2">
-                  <img src="./assets/images/resultadoDeliciaDiariaSorveteria1.png" alt="cliente2resultado1">
-                  <img src="./assets/images/resultadoDeliciaDiariaSorveteria2.png" alt="cliente2resultado2">
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoDeliciaDiariaSorveteria1.png" alt="cliente2resultado1"
+                    class="gallery-image">
+                  <img src="./assets/images/resultadoDeliciaDiariaSorveteria2.png" alt="cliente2resultado2"
+                    class="gallery-image">
                 </div>
-                <div class="carousel-slide" id="slide-3">
-                  <img src="./assets/images/resultadoMarmitariaGrill1.png" alt="cliente3resultado1">
-                  <img src="./assets/images/resultadoMarmitariaGrill2.png" alt="cliente3resultado2">
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoMarmitariaGrill1.png" alt="cliente3resultado1"
+                    class="gallery-image">
+                  <img src="./assets/images/resultadoMarmitariaGrill2.png" alt="cliente3resultado2"
+                    class="gallery-image">
                 </div>
-                <div class="carousel-slide" id="slide-4">
-                  <img src="./assets/images/resultadoPastelariaFamilia1.png" alt="client4resultado1">
-                  <img src="./assets/images/resultadoPastelariaFamilia2.png" alt="cliente4resultado2">
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoPastelariaFamilia1.png" alt="cliente4resultado1"
+                    class="gallery-image">
+                  <img src="./assets/images/resultadoPastelariaFamilia2.png" alt="cliente4resultado2"
+                    class="gallery-image">
                 </div>
-                <div class="carousel-slide" id="slide-5">
-                  <img src="./assets/images/resultadoBistro1.png" alt="client5resultado1">
-                  <img src="./assets/images/resultadoBistro2.png" alt="cliente5resultado2">
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoBistro1.png" alt="cliente5resultado1" class="gallery-image">
+                  <img src="./assets/images/resultadoBistro2.png" alt="cliente5resultado2" class="gallery-image">
                 </div>
               </div>
             </div>
-            <div class="carousel-controls">
-              <label for="carousel-1" class="carousel-control"></label>
-              <label for="carousel-2" class="carousel-control"></label>
-              <label for="carousel-3" class="carousel-control"></label>
-              <label for="carousel-4" class="carousel-control"></label>
-              <label for="carousel-5" class="carousel-control"></label>
-            </div>
+            <button class="gallery-btn next" onclick="scrollGallery(1)">&#10095;</button>
           </div>
+
 
 
 
@@ -247,30 +234,19 @@
               </figure>
 
               <div class="feature-item-content">
-                <h3 class="h2 item-title">Cover your everyday expenses</h3>
+                <h3 class="h2 item-title">Evol Gestão Integrada</h3>
 
                 <p class="item-text">
-                  Inspiration comes in many ways and you like to save everything from. sed do eiusmod tempor incididunt
-                  ut labore et
-                  dolore magna aliqua.
-                </p>
-              </div>
+                  Oferecemos soluções especializadas de suporte e consultoria para lojas de
+                  delivery no iFood. 🚀 <br></br>
 
-            </li>
+                  Nossa equipe é composta por gestores qualificados, e está empenhada em apoiar lojas em todo o Brasil.
+                  💪<br></br>
 
-            <li class="features-item">
+                  Com mais de dois anos de atuação no mercado, desenvolvemos uma metodologia exclusiva, capaz de
+                  atender desde negócios recém-abertos até grandes redes com dezenas de unidades. 🎉<br></br>
 
-              <figure class="features-item-banner">
-                <img src="./assets/images/feature-2.png" alt="feature banner">
-              </figure>
-
-              <div class="feature-item-content">
-                <h3 class="h2 item-title">We offer low fees that are transparent</h3>
-
-                <p class="item-text">
-                  Each time a digital asset is purchased or sold, Sequoir donates a percentage of the fees back into the
-                  development of
-                  the asset through its charitable foundation.
+                  Estamos prontos para impulsionar o sucesso do seu negócio! 📈
                 </p>
               </div>
 
@@ -284,21 +260,23 @@
       <section class="cta">
         <div class="container">
 
-          <div class="cta-card">
+          <div class="cta-card" id="promotion">
 
-            <h3 class="cta-title">Try for 7 days free</h3>
+            <h3 class="cta-title">Teste Grátis Por 7 dias</h3>
 
             <p class="cta-text">
-              Each time a digital asset is purchased or sold, Sequoir donates a percentage of the fees back.
+              Chegou a hora de fazer parte do nosso time de mentorados, aproveite essa PROMOÇÃO e venha fazer parte do
+              grupo que mais cresce no Brasil.
             </p>
 
-            <form action="" class="cta-form">
-
-              <input type="email" name="email" placeholder="Your email address">
-
-              <button type="submit" class="btn btn-secondary">Try It Now</button>
-
+            <form action="" class="cta-form" id="cta-form">
+              <input type="email" name="email" id="email" placeholder="Digite seu email">
+              <button type="submit" class="btn btn-secondary">Enviar</button>
             </form>
+            <script>
+
+            </script>
+
 
           </div>
 
@@ -306,54 +284,22 @@
       </section>
 
 
-
-
-
-      <!-- 
-        - #CONTACT
-      -->
-
       <section class="contact" id="contact">
         <div class="container">
 
           <div class="contact-content">
-            <h2 class="h2 contact-title">Let’s scale your brand, together</h2>
+            <h2 class="h2 contact-title">Solicite seu atendimento</h2>
 
             <figure class="contact-banner">
               <img src="./assets/images/contact.png" alt="contact banner">
             </figure>
           </div>
 
-          <form action="" class="contact-form">
-
-            <div class="input-wrapper">
-              <label for="name" class="input-label">Name *</label>
-
-              <input type="text" name="name" id="name" required placeholder="Type Name" class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="phone" class="input-label">Phone</label>
-
-              <input type="tel" name="phone" id="phone" placeholder="Type Phone Number" class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="email" class="input-label">Email Address *</label>
-
-              <input type="email" name="email" id="email" required placeholder="Type Email Address" class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="message" class="input-label">How can we help? *</label>
-
-              <textarea name="message" id="message" placeholder="Type Description" required
-                class="input-field"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Send Message</button>
-
-          </form>
+          <div class="form-container">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdAL_N_bGgqYduHLHVDERVSmzSpcWEBlYkJbP_49lGH6yvdKw/viewform?embedded=true"
+              width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+          </div>
 
         </div>
       </section>
@@ -363,13 +309,6 @@
   </main>
 
 
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
   <footer>
 
     <div class="footer-top">
@@ -378,10 +317,11 @@
         <div class="footer-brand">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo.png" alt="Funel logo">
+            <img src="./assets/images/logoEvol.jpeg" alt="Funel logo">
           </a>
 
-          <p class="footer-text">Follow us on</p>
+          <p class="footer-text">
+            Siga-nos</p>
 
           <ul class="social-list">
 
@@ -502,36 +442,40 @@
 
     <div class="footer-bottom">
       <p class="copyright">
-        &copy; 2023 <a href="https://github.com/Amit-Ashok-Swain">Amit Ashok Swain</a> All right reserved
+        &copy; 2022 <a href="https://github.com/Amit-Ashok-Swain">Evol Gestão Integrada</a> | Todos os Direitos
+        Reservados
       </p>
     </div>
 
   </footer>
 
 
-
-
-
-  <!-- 
-    - #GO TO TOP
-  -->
-
   <a href="#top" class="go-top active" data-go-top>
     <ion-icon name="chevron-up-outline"></ion-icon>
   </a>
 
+  <a href="https://wa.me/5581997420369?text=Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+    class="whatsapp-button">
+    <ion-icon name="logo-whatsapp"></ion-icon>
+  </a>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const whatsappButton = document.querySelector('.whatsapp-button');
+      if (window.scrollY > 500) {
+        whatsappButton.classList.add('active');
+      } else {
+        whatsappButton.classList.remove('active');
+      }
+    });
+  </script>
 
 
 
 
-  <!-- 
-    - custom js link
-  -->
   <script src="./assets/js/script.js"></script>
 
-  <!-- 
-    - ionicon link
-  -->
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
