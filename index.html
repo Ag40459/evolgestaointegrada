@@ -2,18 +2,539 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evol Gestão Integrada</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <title>My Digital Trail</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/index.jsx"></script>
+<body id="top">
+
+
+  <header>
+
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo.png" alt="Funel logo">
+      </a>
+
+      <div class="navbar-wrapper">
+
+        <button class="navbar-menu-btn" data-navbar-toggle-btn>
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <nav class="navbar" data-navbar>
+
+          <ul class="navbar-list">
+
+            <li class="nav-item">
+              <a href="#home" class="nav-link">Principal</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#about" class="nav-link">Serviços</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#result" class="nav-link">Resultados</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#features" class="nav-link">Avaliações</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contato</a>
+            </li>
+
+          </ul>
+
+          <!-- <button class="btn btn-primary">Fale com Especialista</button> -->
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title">FALE COM ESPECIALISTA EM IFOOD</h1>
+
+            <p class="hero-text">
+              TIRE SUAS DÚVIDAS E RECEBA INSIGHTS PODEROSOS PARA DESTRAVAR DE VEZ AS VENDAS DA SUA LOJA NO IFOOD.
+            </p>
+
+            <button class="btn btn-primary">FALE COM ESPECIALISTA EM IFOOD</button>
+
+          </div>
+
+          <div class="hero-banner"></div>
+
+        </div>
+
+        <img src="./assets/images/bg.png" alt="shape" class="shape-content">
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="about">
+        <div class="container">
+
+          <div class="about-top">
+
+            <h2 class="h2 section-title">Principais Serviços</h2>
+
+            <p class="section-text">
+              Você conta com o melhor time de gestores do mercado. Venha conhecer nossos serviços e faça parte da
+              família que mais vem crescendo.
+            </p>
+
+            <ul class="about-list">
+
+              <li>
+                <div class="about-card">
+
+                  <div class="card-icon">
+                    <ion-icon name="rocket-outline"></ion-icon>
+                  </div>
+
+                  <h3 class="h3 card-title">Analise de Loja</h3>
+
+                  <p class="card-text">
+                    Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e encontra
+                    formas de aumentar sua visibilidade. 🚀🌟
+                  </p>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="about-card">
+
+                  <div class="card-icon">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>
+
+                  </div>
+
+                  <h3 class="h3 card-title">Gestão de Loja</h3>
+
+                  <p class="card-text">
+                    Nosso time acompanhará sua loja com feedbacks semanais e relatórios mensais. Estaremos ao seu lado
+                    todos os dias para garantir o sucesso. 💼📈
+                  </p>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="about-card">
+
+                  <div class="card-icon">
+                    <ion-icon name="briefcase-outline"></ion-icon>
+
+                  </div>
+
+                  <h3 class="h3 card-title">Implantação de Loja</h3>
+
+                  <p class="card-text">
+                    Ainda não tem sua loja no iFood? Nossa equipe cria do zero para você e acompanha no primeiro mês,
+                    cuidando de todos os detalhes. 🍽️🚀
+                  </p>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="about-bottom" id="result">
+            <input type="radio" name="carousel" id="carousel-1" class="carousel-toggle" checked>
+            <input type="radio" name="carousel" id="carousel-2" class="carousel-toggle">
+            <input type="radio" name="carousel" id="carousel-3" class="carousel-toggle">
+            <input type="radio" name="carousel" id="carousel-4" class="carousel-toggle">
+            <input type="radio" name="carousel" id="carousel-5" class="carousel-toggle">
+            <div class="about-bottom-content">
+              <h2 class="h2 section-title">Nossos Resultados</h2>
+              <div class="carousel">
+                <div class="carousel-slide" id="slide-1">
+                  <img src="./assets/images/resultadoVania1.png" alt="cliente1resultado1">
+                  <img src="./assets/images/resultadoVania2.png" alt="cliente1resultado2">
+                </div>
+                <div class="carousel-slide" id="slide-2">
+                  <img src="./assets/images/resultadoDeliciaDiariaSorveteria1.png" alt="cliente2resultado1">
+                  <img src="./assets/images/resultadoDeliciaDiariaSorveteria2.png" alt="cliente2resultado2">
+                </div>
+                <div class="carousel-slide" id="slide-3">
+                  <img src="./assets/images/resultadoMarmitariaGrill1.png" alt="cliente3resultado1">
+                  <img src="./assets/images/resultadoMarmitariaGrill2.png" alt="cliente3resultado2">
+                </div>
+                <div class="carousel-slide" id="slide-4">
+                  <img src="./assets/images/resultadoPastelariaFamilia1.png" alt="client4resultado1">
+                  <img src="./assets/images/resultadoPastelariaFamilia2.png" alt="cliente4resultado2">
+                </div>
+                <div class="carousel-slide" id="slide-5">
+                  <img src="./assets/images/resultadoBistro1.png" alt="client5resultado1">
+                  <img src="./assets/images/resultadoBistro2.png" alt="cliente5resultado2">
+                </div>
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <label for="carousel-1" class="carousel-control"></label>
+              <label for="carousel-2" class="carousel-control"></label>
+              <label for="carousel-3" class="carousel-control"></label>
+              <label for="carousel-4" class="carousel-control"></label>
+              <label for="carousel-5" class="carousel-control"></label>
+            </div>
+          </div>
+
+
+
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="container">
+
+          <h2 class="h2 section-title">Our team is made up of all different backgrounds from all over the world.</h2>
+
+          <p class="section-text">
+            Each time a digital asset is purchased or sold, Sequoir donates a percentage of the fees back into the
+            development of
+            the asset through its charitable foundation.
+          </p>
+
+          <ul class="features-list">
+
+            <li class="features-item">
+
+              <figure class="features-item-banner">
+                <img src="./assets/images/feature-1.png" alt="feature banner">
+              </figure>
+
+              <div class="feature-item-content">
+                <h3 class="h2 item-title">Cover your everyday expenses</h3>
+
+                <p class="item-text">
+                  Inspiration comes in many ways and you like to save everything from. sed do eiusmod tempor incididunt
+                  ut labore et
+                  dolore magna aliqua.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="features-item">
+
+              <figure class="features-item-banner">
+                <img src="./assets/images/feature-2.png" alt="feature banner">
+              </figure>
+
+              <div class="feature-item-content">
+                <h3 class="h2 item-title">We offer low fees that are transparent</h3>
+
+                <p class="item-text">
+                  Each time a digital asset is purchased or sold, Sequoir donates a percentage of the fees back into the
+                  development of
+                  the asset through its charitable foundation.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+
+          <div class="cta-card">
+
+            <h3 class="cta-title">Try for 7 days free</h3>
+
+            <p class="cta-text">
+              Each time a digital asset is purchased or sold, Sequoir donates a percentage of the fees back.
+            </p>
+
+            <form action="" class="cta-form">
+
+              <input type="email" name="email" placeholder="Your email address">
+
+              <button type="submit" class="btn btn-secondary">Try It Now</button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="contact" id="contact">
+        <div class="container">
+
+          <div class="contact-content">
+            <h2 class="h2 contact-title">Let’s scale your brand, together</h2>
+
+            <figure class="contact-banner">
+              <img src="./assets/images/contact.png" alt="contact banner">
+            </figure>
+          </div>
+
+          <form action="" class="contact-form">
+
+            <div class="input-wrapper">
+              <label for="name" class="input-label">Name *</label>
+
+              <input type="text" name="name" id="name" required placeholder="Type Name" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="phone" class="input-label">Phone</label>
+
+              <input type="tel" name="phone" id="phone" placeholder="Type Phone Number" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="email" class="input-label">Email Address *</label>
+
+              <input type="email" name="email" id="email" required placeholder="Type Email Address" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="message" class="input-label">How can we help? *</label>
+
+              <textarea name="message" id="message" placeholder="Type Description" required
+                class="input-field"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+
+          </form>
+
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer>
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" alt="Funel logo">
+          </a>
+
+          <p class="footer-text">Follow us on</p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://github.com/Amit-Ashok-Swain" class="social-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://instagram.com/_sanatani_hindutva_?igshid=OGQ5ZDc2ODk2ZA==" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-link-list">
+
+            <li>
+              <h3 class="h4 link-title">Company</h3>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">About Us</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Features</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Pricing</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-link-list">
+
+            <li>
+              <h3 class="h4 link-title">Products</h3>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Help Center</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Contact</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-link-list">
+
+            <li>
+              <h3 class="h4 link-title">Resources</h3>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">FAQ’S</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Testimonial</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-link-list">
+
+            <li>
+              <h3 class="h4 link-title">Relevent</h3>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Why</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Products</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Customers</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2023 <a href="https://github.com/Amit-Ashok-Swain">Amit Ashok Swain</a> All right reserved
+      </p>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top active" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 
 </html>
