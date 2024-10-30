@@ -187,13 +187,9 @@ body {
 header {
   position: relative;
   z-index: 2;
-
   background: linear-gradient(145deg, #f0f0f0, #cccccc);
   box-shadow: 4px 4px 8px #bbbbbb, -4px -4px 8px #ffffff;
   border-radius: 10px;
-  padding: 20px;
-
-
 }
 
 header .container {
@@ -264,7 +260,9 @@ header .container {
 }
 
 .hero-content {
+  margin-bottom: 80px;
   text-align: center;
+
 }
 
 .hero-title,
@@ -793,7 +791,6 @@ footer .logo {
     max-width: 300px;
     margin-inline: auto;
   }
-
 }
 
 
@@ -827,7 +824,6 @@ footer .logo {
     top: -156px;
     right: -152px;
   }
-
 
   .footer-brand {
     margin-bottom: 40px;
