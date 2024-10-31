@@ -177,7 +177,11 @@ body {
 }
 
 .btn-primary:is(:hover, :focus) {
-  --bittersweet: hsl(2, 90%, 65%);
+  --bittersweet: hsl(2, 58%, 45%);
+}
+
+.btn-primary-modific {
+  font-size: 20px;
 }
 
 .btn-secondary:is(:hover, :focus) {
@@ -257,10 +261,10 @@ header .container {
   position: relative;
   padding: 130px 0 140px;
   z-index: 1;
+  bottom: 100px;
 }
 
 .hero-content {
-  margin-bottom: 80px;
   text-align: center;
 
 }
@@ -268,6 +272,24 @@ header .container {
 .hero-title,
 .hero-text {
   margin-bottom: 40px;
+}
+
+.hero-title-modific {
+  font-size: 2em;
+  animation: colorChange 2s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    color: red;
+    text-shadow: 2px 2px black;
+  }
+
+  100% {
+    color: black;
+    text-shadow: 2px 2px red;
+  }
+
 }
 
 .hero-text {
@@ -724,6 +746,68 @@ footer .logo {
 }
 
 
+.about-bottom-content {
+  position: relative;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-slide img {
+  width: 45%;
+  height: auto;
+  cursor: pointer;
+}
+
+.carousel-toggle {
+  display: none;
+}
+
+#carousel-1:checked~.about-bottom-content .carousel {
+  transform: translateX(0%);
+}
+
+#carousel-2:checked~.about-bottom-content .carousel {
+  transform: translateX(-100%);
+}
+
+#carousel-3:checked~.about-bottom-content .carousel {
+  transform: translateX(-200%);
+}
+
+#carousel-4:checked~.about-bottom-content .carousel {
+  transform: translateX(-300%);
+}
+
+#carousel-5:checked~.about-bottom-content .carousel {
+  transform: translateX(-400%);
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-control {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
 
 @media (min-width: 450px) {
 
@@ -748,9 +832,6 @@ footer .logo {
     width: 300px;
   }
 
-  .hero {
-    padding: 140px 0 160px;
-  }
 
   .shape-content {
     top: -70px;
@@ -793,7 +874,6 @@ footer .logo {
   }
 }
 
-
 @media (min-width: 560px) {
 
   .container {
@@ -812,12 +892,17 @@ footer .logo {
 
   .hero-content,
   .about-bottom-content {
-    text-align: left;
+    text-align: center;
+
   }
 
   .hero .btn-primary,
   .about-bottom .btn-secondary {
     margin-inline: 0;
+  }
+
+  .btn-primary {
+    width: 100%;
   }
 
   .shape-content {
@@ -835,7 +920,6 @@ footer .logo {
   }
 
 }
-
 
 @media (min-width: 768px) {
 
@@ -1020,68 +1104,6 @@ footer .logo {
     gap: 50px;
   }
 
-}
-
-.about-bottom-content {
-  position: relative;
-  width: 100%;
-}
-
-.carousel {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  transition: transform 0.5s ease-in-out;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.carousel-slide img {
-  width: 45%;
-  height: auto;
-  cursor: pointer;
-}
-
-.carousel-toggle {
-  display: none;
-}
-
-#carousel-1:checked~.about-bottom-content .carousel {
-  transform: translateX(0%);
-}
-
-#carousel-2:checked~.about-bottom-content .carousel {
-  transform: translateX(-100%);
-}
-
-#carousel-3:checked~.about-bottom-content .carousel {
-  transform: translateX(-200%);
-}
-
-#carousel-4:checked~.about-bottom-content .carousel {
-  transform: translateX(-300%);
-}
-
-#carousel-5:checked~.about-bottom-content .carousel {
-  transform: translateX(-400%);
-}
-
-.carousel-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.carousel-control {
-  width: 15px;
-  height: 15px;
-  margin: 0 5px;
-  border-radius: 50%;
 }
 
 @media (min-width: 1200px) {
