@@ -1,10 +1,6 @@
 :root {
 
-  /**
-   * colors
-   */
-
-  --maximum-yellow-red: hsl(37, 100%, 68%);
+  --maximum-yellow-red: linear-gradient(145deg, rgba(240, 240, 240, 0.8), rgba(204, 204, 204, 0.8));
   --royal-blue-dark: hsl(231, 61%, 22%);
   --silver-chalice: hsl(0, 0%, 70%);
   --oxford-blue: hsl(231, 100%, 8%);
@@ -18,9 +14,6 @@
   --black: hsl(0, 0%, 0%);
   --rythm: hsl(240, 9%, 53%);
 
-  /**
-   * typography
-   */
 
   --ff-poppins: "Poppins", sans-sarif;
 
@@ -35,21 +28,9 @@
   --fw-600: 600;
   --fw-500: 500;
 
-  /**
-   * transition
-   */
-
   --transition: 0.25s ease-in-out;
 
 }
-
-
-
-
-
-/*-----------------------------------*\ 
- * #RESET
-\*-----------------------------------*/
 
 *,
 *::before,
@@ -204,14 +185,15 @@ header .container {
 
 .navbar-menu-btn {
   font-size: 30px;
+  /* border: 2px solid red; */
   padding: 5px;
 }
 
 .navbar {
   position: absolute;
-  top: calc(100% - 15px);
+  top: 85px;
   left: 15px;
-  right: 15px;
+  right: -15px;
   background: var(--maximum-yellow-red);
   max-height: 0;
   visibility: hidden;
@@ -259,7 +241,7 @@ header .container {
 
 .hero {
   position: relative;
-  padding: 130px 0 140px;
+  padding: 130px 0 0 0;
   z-index: 1;
   bottom: 100px;
 }
@@ -397,7 +379,7 @@ header .container {
 
 
 .features {
-  padding: 120px 0;
+  padding: 120px 0 0 0;
   text-align: center;
 }
 
@@ -423,7 +405,8 @@ header .container {
 }
 
 .features-item-banner img {
-  width: 100%;
+  width: 450px;
+  border-radius: 30%;
 }
 
 .features-item .item-title {
@@ -442,7 +425,7 @@ header .container {
 
 
 .cta {
-  padding: 120px 0;
+  padding-bottom: 80px;
 }
 
 .cta-card {
@@ -622,8 +605,7 @@ footer .logo {
   z-index: 5;
   width: 50px;
   height: 50px;
-  background: linear-gradient(-45deg, var(--maximum-yellow-red), var(--french-rose));
-  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.25);
+  background: var(--bittersweet);
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -648,7 +630,7 @@ footer .logo {
   z-index: 1000;
   background-color: #25D366;
   color: white;
-  padding: 15px;
+  padding: 13px;
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-size: 24px;
@@ -672,9 +654,8 @@ footer .logo {
 }
 
 .form-container {
-  width: 70%;
-  max-width: 100%;
-  height: 100%;
+  width: 80%;
+  height: auto;
   margin: 0 auto;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -682,28 +663,42 @@ footer .logo {
   background-color: #fff;
 }
 
-.gallery-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 300px;
+.form-container iframe {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.gallery-wrapper {
-  overflow: hidden;
-  width: 100%;
+  height: 1400px;
+  max-width: 100%;
 }
 
 .gallery {
   display: flex;
   transition: transform 0.5s ease-in-out;
   white-space: nowrap;
+}
+
+.gallery-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.section-title-modific {
+
+  padding-bottom: 100px;
+}
+
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
 }
 
 .gallery-pair {
@@ -808,6 +803,48 @@ footer .logo {
   border-radius: 50%;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+*/ .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+
+  .form-container iframe {
+    height: 1650px;
+  }
+
+  .features-item {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .features-item-banner img {
+    width: 350px;
+    padding-top: 50px;
+    border-radius: 30%;
+  }
+
+  .features {
+    height: auto;
+  }
+
+  .contact-banner img {
+    display: none;
+  }
+}
 
 @media (min-width: 450px) {
 
@@ -816,7 +853,6 @@ footer .logo {
     --fs-1: 60px;
 
   }
-
 
   .h1,
   .h2 {
@@ -955,6 +991,7 @@ footer .logo {
     --fs-2: 42px;
   }
 
+
 }
 
 @media (min-width: 1024px) {
@@ -1053,6 +1090,7 @@ footer .logo {
     margin-inline: 0;
     margin-bottom: 0;
   }
+
 
   .feature-item-content {
     width: 50%;
