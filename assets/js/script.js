@@ -55,3 +55,12 @@ function scrollGallery(direction) {
 
   gallery.style.transform = `translateX(-${scrollAmount}px)`;
 }
+
+window.addEventListener('scroll', function () {
+  const whatsappButton = document.querySelector('.whatsapp-button');
+  if (window.scrollY > 500) {
+    whatsappButton.classList.add('active');
+  } else {
+    whatsappButton.classList.remove('active');
+  }
+});

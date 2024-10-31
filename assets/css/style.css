@@ -679,7 +679,7 @@ footer .logo {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 100%;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -805,6 +805,7 @@ footer .logo {
 
 .logo {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -816,6 +817,11 @@ footer .logo {
 }
 
 @media (max-width: 768px) {
+
+  .about {
+    height: 1800px;
+  }
+
   .logo img {
     display: block;
     margin: 0 auto;
