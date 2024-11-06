@@ -79,11 +79,13 @@
         <div class="container">
 
           <div class="hero-content">
-            <h1 class="h1 hero-title hero-title-modific">🚀 QUE TAL TURBINAR SEUS LUCROS NO IFOOD? </h1>
-            <h1 class="h1 hero-title">📞FALE COM UM DE NOSSOS ESPECIALISTA</h1>
+            <h1 class="h1 hero-title hero-title-modific">QUE TAL DAR O MELHOR PARA SUA FAMÍLIA? TURBINE SEUS
+              LUCROS
+              COM O IFOOD! 👨‍👩‍👧‍👦 </h1>
+            <h1 class="h1 hero-title">📞FALE COM UM DE NOSSOS ESPECIALISTAS</h1>
 
             <p class="hero-text">
-              💡 TIRE SUAS DÚVIDAS E DESCUBRA O QUANTO SUA LOJA OU FUTURA LOJA CRESCERÁ NO IFOOD COM NOSSA GESTÃO! 💰
+              💡 TIRE SUAS DÚVIDAS E DESCUBRA O QUANTO NOSSA GESTÃO FARÁ SUA LOJA CRESCER NO IFOOD! 💰
             </p>
 
             <button class="btn btn-primary btn-primary-modific" id="contact-whatsapp">FALE COM NOSSA EQUIPE</button>
@@ -95,7 +97,6 @@
 
         </div>
 
-        <!-- <img src="./assets/images/bg.png" alt="shape" class="shape-content"> -->
       </section>
 
       <section class="about">
@@ -103,69 +104,163 @@
 
           <div class="about-top">
 
-            <h2 class="h2 section-title" id="service">Principais Serviços</h2>
+            <div class="tabs">
+              <button class="tab-btn" onclick="selectTab('logistics')">Logística</button>
+              <button class="tab-btn active" onclick="selectTab('services')">Principais Serviços</button>
+              <button class="tab-btn" onclick="selectTab('branding')">Licenciamento</button>
+            </div>
 
-            <p class="section-text">
-              Você conta com o melhor time de gestores do mercado. Venha conhecer nossos serviços e faça parte da
-              família que mais vem crescendo.
-            </p>
 
-            <ul class="about-list">
-
-              <li>
-                <div class="about-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="rocket-outline"></ion-icon>
-                  </div>
-
-                  <h3 class="h3 card-title">Analise de Loja</h3>
-
-                  <p class="card-text">
-                    Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e encontra
-                    formas de aumentar sua visibilidade. 🚀🌟
+            <div class="tab-content active" id="services">
+              <ul class="about-list">
+                <li>
+                  <p class="section-text">
+                    Você conta com o melhor time de gestores do mercado. Venha conhecer nossos serviços e faça parte da
+                    família que mais vem crescendo.
                   </p>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="about-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-
+                  <div class="about-card" onclick="showModal('Analise de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Analise de Loja</h3>
+                    <p class="card-text">
+                      Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e
+                      encontra formas de aumentar sua visibilidade. 🚀🌟
+                    </p>
+                    <br>
+                    <p class="card-text">À partir de R$ 99,99</p>
                   </div>
-
-                  <h3 class="h3 card-title">Gestão de Loja</h3>
-
-                  <p class="card-text">
-                    Nosso time acompanhará sua loja com feedbacks semanais e relatórios mensais. Estaremos ao seu lado
-                    todos os dias para garantir o sucesso. 💼📈
-                  </p>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="about-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="briefcase-outline"></ion-icon>
-
+                </li>
+                <li>
+                  <div class="about-card" onclick="showModal('Gestão de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Gestão de Loja</h3>
+                    <p class="card-text">
+                      Nosso time acompanhará sua loja com feedbacks semanais e relatórios mensais. Estaremos ao seu lado
+                      todos os dias para garantir o sucesso. 💼📈
+                    </p>
                   </div>
+                </li>
+                <li>
+                  <div class="about-card" onclick="showModal('Implantação de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="briefcase-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Implantação de Loja</h3>
+                    <p class="card-text">
+                      Ainda não tem sua loja no iFood? Nossa equipe cria do zero para você e acompanha no primeiro mês,
+                      cuidando de todos os detalhes. 🍽️🚀
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-                  <h3 class="h3 card-title">Implantação de Loja</h3>
-
-                  <p class="card-text">
-                    Ainda não tem sua loja no iFood? Nossa equipe cria do zero para você e acompanha no primeiro mês,
-                    cuidando de todos os detalhes. 🍽️🚀
+            <div class="tab-content active" id="logistics">
+              <ul class="about-list">
+                <li>
+                  <p class="section-text">
+                    Deixa que nossa equipe de entrega leva para vocÊ. Tenha tempo para o que mais para cuidar da sua
+                    operação
                   </p>
+                  <div class="about-card" onclick="showModal('Analise de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">A Gente Leva Para você</h3>
+                    <p class="card-text">
+                      Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e
+                      encontra formas de aumentar sua visibilidade. 🚀🌟
+                    </p>
+                    <br>
+                    <p class="card-text">À partir de R$ 99,99</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="about-card" onclick="showModal('Gestão de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Gestão de Loja</h3>
+                    <p class="card-text">
+                      Nosso time acompanhará sua loja com feedbacks semanais e relatórios mensais. Estaremos ao seu lado
+                      todos os dias para garantir o sucesso. 💼📈
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="about-card" onclick="showModal('Implantação de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="briefcase-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Implantação de Loja</h3>
+                    <p class="card-text">
+                      Ainda não tem sua loja no iFood? Nossa equipe cria do zero para você e acompanha no primeiro mês,
+                      cuidando de todos os detalhes. 🍽️🚀
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-                </div>
-              </li>
+            <div class="tab-content active" id="branding">
+              <ul class="about-list">
+                <li>
+                  <p class="section-text">
+                    Você conta com o melhor time de gestores do mercado. Venha conhecer nossos serviços e faça parte da
+                    família que mais vem crescendo.
+                  </p>
+                  <div class="about-card" onclick="showModal('Analise de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Analise de Loja</h3>
+                    <p class="card-text">
+                      Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e
+                      encontra formas de aumentar sua visibilidade. 🚀🌟
+                    </p>
+                    <br>
+                    <p class="card-text">À partir de R$ 99,99</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="about-card" onclick="showModal('Gestão de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Gestão de Loja</h3>
+                    <p class="card-text">
+                      Nosso time acompanhará sua loja com feedbacks semanais e relatórios mensais. Estaremos ao seu lado
+                      todos os dias para garantir o sucesso. 💼📈
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="about-card" onclick="showModal('Implantação de Loja')">
+                    <div class="card-icon">
+                      <ion-icon name="briefcase-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Implantação de Loja</h3>
+                    <p class="card-text">
+                      Ainda não tem sua loja no iFood? Nossa equipe cria do zero para você e acompanha no primeiro mês,
+                      cuidando de todos os detalhes. 🍽️🚀
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-            </ul>
+            <div id="modal" class="modal">
+              <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <div id="modal-card-content"></div>
+                <input type="text" id="customer-name" placeholder="Digite seu nome">
+                <button id="send-btn" onclick="sendMessage()" disabled>Enviar</button>
+              </div>
+            </div>
+
 
           </div>
 

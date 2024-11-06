@@ -178,3 +178,88 @@ window.addEventListener('resize', () => {
   setPositionByIndex();
 });
 
+
+
+
+function selectTab(tabId) {
+  const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+  const contents = Array.from(document.querySelectorAll('.tab-content'));
+
+  buttons.forEach(button => button.classList.remove('active'));
+  contents.forEach(content => content.classList.remove('active'));
+
+  document.querySelector(`[onclick="selectTab('${tabId}')"]`).classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+
+  reorderTabs(tabId, buttons);
+}
+
+function reorderTabs(selectedTabId, buttons) {
+  const selectedIndex = buttons.findIndex(button => button.getAttribute('onclick') === `selectTab('${selectedTabId}')`);
+  const midIndex = Math.floor(buttons.length / 2);
+
+  let startIndex = selectedIndex - midIndex;
+  if (startIndex < 0) startIndex += buttons.length;
+
+  const orderedButtons = buttons.slice(startIndex).concat(buttons.slice(0, startIndex));
+
+  const tabsContainer = document.querySelector('.tabs');
+  tabsContainer.innerHTML = '';
+  orderedButtons.forEach(button => tabsContainer.appendChild(button));
+
+  centerTab();
+}
+
+function centerTab() {
+  const activeButton = document.querySelector('.tab-btn.active');
+  const tabsContainer = document.querySelector('.tabs');
+
+  const offset = tabsContainer.offsetWidth / 2 - activeButton.offsetWidth / 2;
+  const activeOffset = activeButton.offsetLeft - tabsContainer.offsetLeft;
+
+  tabsContainer.scroll({
+    left: activeOffset - offset,
+    behavior: 'smooth'
+  });
+}
+
+let currentCardContent = '';
+
+function showModal(cardTitle) {
+  const card = document.querySelector(`.about-card[onclick="showModal('${cardTitle}')"]`);
+  currentCardContent = card.innerHTML;
+
+  const extraDetails = "Adicione aqui suas informações adicionais sobre o serviço do card.";
+  document.getElementById('modal-card-content').innerHTML = currentCardContent + `<p>${extraDetails}</p>`;
+  document.getElementById('modal').style.display = 'block';
+
+  document.getElementById('customer-name').value = '';
+  document.getElementById('send-btn').disabled = true;
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+
+window.onclick = function (event) {
+  if (event.target == document.getElementById('modal')) {
+    closeModal();
+  }
+}
+
+document.getElementById('customer-name').addEventListener('input', function () {
+  const sendBtn = document.getElementById('send-btn');
+  if (this.value.trim() !== '') {
+    sendBtn.disabled = false;
+  } else {
+    sendBtn.disabled = true;
+  }
+});
+
+function sendMessage() {
+  const name = document.getElementById('customer-name').value.trim();
+  const message = `Meu nome é ${name}, tenho interesse em ${document.querySelector('.modal .card-title').innerText}`;
+  const encodedMessage = encodeURIComponent(message);
+  window.open(`https://api.whatsapp.com/send?phone=5581997420369&text=${encodedMessage}`, '_blank');
+  closeModal();
+}
