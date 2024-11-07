@@ -102,72 +102,104 @@
         <div class="container">
 
           <div class="about-top">
+            <div class="tabs">
+              <button class="tab-btn" onclick="selectTab('logistics')">Logística</button>
+              <button class="tab-btn active" onclick="selectTab('services')">Principais Serviços</button>
+              <button class="tab-btn" onclick="selectTab('branding')">Licenciamento</button>
+            </div>
 
-            <h2 class="h2 section-title" id="service">Principais Serviços</h2>
-
-            <p class="section-text">
-              Você conta com o melhor time de gestores do mercado. Venha conhecer nossos serviços e faça parte da
-              família que mais vem crescendo.
-            </p>
-
-            <ul class="about-list">
-
-              <li>
-                <div class="about-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="rocket-outline"></ion-icon>
+            <div class="tab-content active" id="services">
+              <ul class="about-list">
+                <li>
+                  <div class="about-card" onclick="showCustomModal('services-analise-de-loja')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Analise de Loja</h3>
+                    <p class="card-text">
+                      Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e
+                      encontra formas de aumentar sua visibilidade. 🚀🌟
+                    </p>
+                    <p class="extra-details" style="display: none;">Detalhes adicionais sobre a Analise de Loja.</p>
                   </div>
-
-                  <h3 class="h3 card-title">Analise de Loja</h3>
-
-                  <p class="card-text">
-                    Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e encontra
-                    formas de aumentar sua visibilidade. 🚀🌟
-                  </p>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="about-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-
+                </li>
+                <li>
+                  <div class="about-card" onclick="showCustomModal('services-gestao-de-loja')">
+                    <div class="card-icon">
+                      <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Gestão de Loja</h3>
+                    <p class="card-text">
+                      Nosso time acompanhará sua loja com feedbacks semanais e relatórios mensais. Estaremos ao seu lado
+                      todos os dias para garantir o sucesso. 💼📈
+                    </p>
+                    <p class="extra-details" style="display: none;">Detalhes adicionais sobre a Gestão de Loja.</p>
                   </div>
-
-                  <h3 class="h3 card-title">Gestão de Loja</h3>
-
-                  <p class="card-text">
-                    Nosso time acompanhará sua loja com feedbacks semanais e relatórios mensais. Estaremos ao seu lado
-                    todos os dias para garantir o sucesso. 💼📈
-                  </p>
-
-                </div>
-              </li>
-
-              <li>
-                <div class="about-card">
-
-                  <div class="card-icon">
-                    <ion-icon name="briefcase-outline"></ion-icon>
-
+                </li>
+                <li>
+                  <div class="about-card" onclick="showCustomModal('services-implantacao-de-loja')">
+                    <div class="card-icon">
+                      <ion-icon name="briefcase-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Implantação de Loja</h3>
+                    <p class="card-text">
+                      Ainda não tem sua loja no iFood? Nossa equipe cria do zero para você e acompanha no primeiro mês,
+                      cuidando de todos os detalhes. 🍽️🚀
+                    </p>
+                    <p class="extra-details" style="display: none;">Detalhes adicionais sobre a Implantação de Loja.</p>
                   </div>
+                </li>
+              </ul>
+            </div>
 
-                  <h3 class="h3 card-title">Implantação de Loja</h3>
+            <div class="tab-content" id="logistics">
+              <ul class="about-list">
+                <li>
+                  <div class="about-card" onclick="showCustomModal('logistics-entregamos-para-voce')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Entregamos Para Você</h3>
+                    <p class="card-text">
+                      Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e
+                      encontra formas de aumentar sua visibilidade. 🚀🌟
+                    </p>
+                    <p class="extra-details" style="display: none;">Detalhes adicionais sobre a Analise de Loja.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-                  <p class="card-text">
-                    Ainda não tem sua loja no iFood? Nossa equipe cria do zero para você e acompanha no primeiro mês,
-                    cuidando de todos os detalhes. 🍽️🚀
-                  </p>
+            <div class="tab-content" id="branding">
+              <ul class="about-list">
+                <li>
+                  <div class="about-card" onclick="showCustomModal('branding-licenciamos-sua-marca')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Licenciamos Sua Marca</h3>
+                    <p class="card-text">
+                      Nossa equipe analisa cada detalhe da sua loja e da concorrência, estuda nichos regionais e
+                      encontra formas de aumentar sua visibilidade. 🚀🌟
+                    </p>
+                    <p class="extra-details" style="display: none;">Detalhes adicionais sobre a Analise de Loja.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-                </div>
-              </li>
-
-            </ul>
-
+            <!-- Estrutura do Modal -->
+            <div id="custom-modal" class="custom-modal">
+              <div class="custom-modal-content">
+                <span class="custom-close-btn" onclick="closeCustomModal()">&times;</span>
+                <div id="custom-modal-card-content"></div>
+                <input type="text" id="customer-name" placeholder="Digite seu nome">
+                <button id="send-btn" onclick="sendCustomMessage()" disabled>Contratar Plano</button>
+              </div>
+            </div>
           </div>
+
+
 
           <div class="gallery-container">
             <h2 class="h2 section-title section-title-modific" id="result">Nossos Resultados</h2>
