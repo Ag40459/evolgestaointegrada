@@ -181,7 +181,10 @@ window.addEventListener('resize', () => {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 84a1875002d392ab9747ffc11cfb7fb8eab96c5a
 function selectTab(tabId) {
   const buttons = Array.from(document.querySelectorAll('.tab-btn'));
   const contents = Array.from(document.querySelectorAll('.tab-content'));
@@ -215,6 +218,7 @@ function centerTab() {
   const activeButton = document.querySelector('.tab-btn.active');
   const tabsContainer = document.querySelector('.tabs');
 
+<<<<<<< HEAD
   if (activeButton) {
     const offset = tabsContainer.offsetWidth / 2 - activeButton.offsetWidth / 2;
     const activeOffset = activeButton.offsetLeft - tabsContainer.offsetLeft;
@@ -286,11 +290,32 @@ function showCustomModal(cardTitle) {
   currentCardContent = card.innerHTML;
   document.getElementById('custom-modal-card-content').innerHTML = currentCardContent + `<p>${extraDetails}</p>`;
   document.getElementById('custom-modal').style.display = 'block';
+=======
+  const offset = tabsContainer.offsetWidth / 2 - activeButton.offsetWidth / 2;
+  const activeOffset = activeButton.offsetLeft - tabsContainer.offsetLeft;
+
+  tabsContainer.scroll({
+    left: activeOffset - offset,
+    behavior: 'smooth'
+  });
+}
+
+let currentCardContent = '';
+
+function showModal(cardTitle) {
+  const card = document.querySelector(`.about-card[onclick="showModal('${cardTitle}')"]`);
+  currentCardContent = card.innerHTML;
+
+  const extraDetails = "Adicione aqui suas informações adicionais sobre o serviço do card.";
+  document.getElementById('modal-card-content').innerHTML = currentCardContent + `<p>${extraDetails}</p>`;
+  document.getElementById('modal').style.display = 'block';
+>>>>>>> 84a1875002d392ab9747ffc11cfb7fb8eab96c5a
 
   document.getElementById('customer-name').value = '';
   document.getElementById('send-btn').disabled = true;
 }
 
+<<<<<<< HEAD
 function closeCustomModal() {
   document.getElementById('custom-modal').style.display = 'none';
 }
@@ -298,6 +323,15 @@ function closeCustomModal() {
 window.onclick = function (event) {
   if (event.target == document.getElementById('custom-modal')) {
     closeCustomModal();
+=======
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+
+window.onclick = function (event) {
+  if (event.target == document.getElementById('modal')) {
+    closeModal();
+>>>>>>> 84a1875002d392ab9747ffc11cfb7fb8eab96c5a
   }
 }
 
@@ -310,6 +344,7 @@ document.getElementById('customer-name').addEventListener('input', function () {
   }
 });
 
+<<<<<<< HEAD
 function sendCustomMessage() {
   const name = document.getElementById('customer-name').value.trim();
   const message = `Meu nome é ${name}, tenho interesse em ${document.querySelector('.custom-modal .card-title').innerText}`;
@@ -346,3 +381,12 @@ function prevCard() {
 
 // Mostrar o primeiro card ao carregar a página
 showCard(currentCardIndex);
+=======
+function sendMessage() {
+  const name = document.getElementById('customer-name').value.trim();
+  const message = `Meu nome é ${name}, tenho interesse em ${document.querySelector('.modal .card-title').innerText}`;
+  const encodedMessage = encodeURIComponent(message);
+  window.open(`https://api.whatsapp.com/send?phone=5581997420369&text=${encodedMessage}`, '_blank');
+  closeModal();
+}
+>>>>>>> 84a1875002d392ab9747ffc11cfb7fb8eab96c5a

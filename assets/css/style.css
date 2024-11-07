@@ -1381,6 +1381,156 @@ footer img {
 
 }
 
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.tab-btn {
+  font-size: 0.4em;
+  /* Metade do tamanho original para abas não selecionadas */
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  transition: font-size 0.3s, color 0.3s, transform 0.3s;
+  margin: 0 10px;
+  z-index: 1;
+  flex: 1;
+  /* Garante que as abas permaneçam alinhadas */
+  text-align: center;
+  /* Centraliza o texto */
+}
+
+.tab-btn.active {
+  font-size: 0.8em;
+  /* Dobro do tamanho original para a aba selecionada */
+  color: blue;
+  z-index: 2;
+  position: relative;
+  margin-top: -10px;
+  /* Move a aba selecionada para cima */
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: slideDown 0.5s ease-out;
+  /* Animação de deslize para baixo */
+}
+
+.about-card {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  /* Mantém o modal na posição inicial */
+  width: 100%;
+  height: 100%;
+  /* Cobre toda a página */
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Sombra na página total */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* Centraliza verticalmente o conteúdo do modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-btn {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#send-btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+#send-btn {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#customer-name {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#modal-card-content {
+  margin-top: 20px;
+  /* Move o conteúdo do card para baixo */
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .tab-btn {
+    font-size: 0.6em;
+    /* Tamanho menor para abas não selecionadas no modo responsivo */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .tab-btn.active {
+    font-size: 1.4em;
+    /* Tamanho maior para a aba selecionada no modo responsivo */
+    margin-top: -30px;
+    /* Move a aba selecionada para cima */
+    color: blue;
+    /* white-space: normal; */
+    /* Permite quebra de linha para texto longo */
+    overflow: visible;
+    text-overflow: initial;
+  }
+}
+
 @media (min-width: 1200px) {
 
   :root {
