@@ -186,7 +186,7 @@ let currentCardContent = '';
 
 function showCustomModal(cardId) {
   const card = document.querySelector(`.about-card[onclick="showCustomModal('${cardId}')"]`);
-  const extraDetails = "Mais informações sobre o serviço do card.";
+  const extraDetails = card.querySelector('.extra-details').innerHTML;
 
   currentCardContent = card.innerHTML;
   document.getElementById('custom-modal-card-content').innerHTML = currentCardContent + `<p>${extraDetails}</p>`;
@@ -195,6 +195,7 @@ function showCustomModal(cardId) {
   document.getElementById('customer-name').value = '';
   document.getElementById('send-btn').disabled = true;
 }
+
 
 function closeCustomModal() {
   document.getElementById('custom-modal').style.display = 'none';
