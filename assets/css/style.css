@@ -293,13 +293,10 @@ header .container {
   z-index: -1;
 }
 
-
 .about {
   position: relative;
   z-index: 1;
-  background: url("../images/about-bg.png") no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: url("../images/about-bg.png") no-repeat center/cover;
   padding: 120px 0;
   text-align: center;
 }
@@ -308,25 +305,112 @@ header .container {
   margin-bottom: 120px;
 }
 
-.about .h2 {
+.about .h2,
+.about-top .section-text,
+.about-bottom .section-text {
   color: var(--white);
 }
 
-.about-top .section-title {
+.about-top .section-title,
+.about-bottom .section-title {
   margin-bottom: 20px;
 }
 
-.about-top .section-text {
-  color: var(--white);
+.about-top .section-text,
+.about-bottom .section-text {
   font-size: var(--fs-4);
-  margin-bottom: 60px;
 }
 
 .about-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  grid-template-columns: 1fr;
   gap: 30px;
+}
+
+.about-card-wrapper {
+  flex: 1 1 300px;
+  /* Cards lado a lado com largura mínima */
+  display: flex;
+  justify-content: center;
+  /* Centraliza o card dentro do wrapper */
+}
+
+.about-card {
+  background: var(--white);
+  padding: 40px;
+  max-width: 350px;
+  height: 100%;
+  max-height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-card .card-title {
+  margin-bottom: 15px;
+}
+
+.about-card .card-text {
+  color: var(--davys-gray);
+}
+
+.about-bottom-banner {
+  margin-bottom: 120px;
+}
+
+.about-bottom-banner img {
+  width: 100%;
+  height: 100%;
+}
+
+.about-bottom .btn-secondary {
+  color: var(--white);
+  margin-inline: auto;
+}
+
+.about-bottom-content {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .about-list {
+    flex-direction: column;
+    /* Cards um em cima do outro no modo responsivo */
+  }
+
+  .about-card {
+    max-width: 100%;
+    /* Cards ocupam toda a largura disponível no modo responsivo */
+    height: auto;
+    /* Ajusta a altura automaticamente */
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-top .section-text {
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  .about-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .about-bottom-banner {
+    margin-bottom: 0;
+    height: 330px;
+  }
+
+  .about-bottom-content {
+    width: 50%;
+  }
 }
 
 
@@ -368,9 +452,6 @@ header .container {
   display: block;
 }
 
-.about-card {
-  cursor: pointer;
-}
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
@@ -389,19 +470,6 @@ header .container {
     overflow: visible;
     text-overflow: initial;
   }
-}
-
-
-
-
-
-
-.about-card {
-  background: var(--white);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
-  cursor: pointer;
 }
 
 
@@ -487,38 +555,6 @@ header .container {
   width: max-content;
   margin-inline: auto;
   margin-bottom: 15px;
-}
-
-.about-card .card-title {
-  margin-bottom: 15px;
-}
-
-.about-card .card-text {
-  color: var(--davys-gray);
-}
-
-.about-bottom-banner {
-  margin-bottom: 120px;
-}
-
-.about-bottom-banner img {
-  width: 100%;
-  height: 100%;
-}
-
-.about-bottom .section-title {
-  margin-bottom: 20px;
-}
-
-.about-bottom .section-text {
-  color: var(--white);
-  font-size: var(--fs-4);
-  margin-bottom: 40px;
-}
-
-.about-bottom .btn-secondary {
-  color: var(--white);
-  margin-inline: auto;
 }
 
 
@@ -886,12 +922,6 @@ footer img {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-.about-bottom-content {
-  position: relative;
-  width: 100%;
-}
-
 .carousel {
   display: flex;
   overflow: hidden;
@@ -999,6 +1029,8 @@ footer img {
 
 @media (max-width: 768px) {
 
+
+
   .modal-content {
     flex-direction: column;
   }
@@ -1006,11 +1038,6 @@ footer img {
   .modal-image {
     max-width: 80%;
     margin-bottom: 10px;
-  }
-
-  .about {
-    height: 1850px;
-
   }
 
   .form-container iframe {
@@ -1184,21 +1211,6 @@ footer img {
     max-width: 740px;
   }
 
-  .about-list {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .about-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .about-card .card-title {
-    padding-inline: 0;
-  }
 
   .contact-title {
     --fs-2: 42px;
@@ -1208,6 +1220,7 @@ footer img {
 }
 
 @media (min-width: 1024px) {
+
 
   .container {
     max-width: 950px;
@@ -1262,30 +1275,6 @@ footer img {
     background-size: contain;
   }
 
-  .about-top .section-text {
-    max-width: 650px;
-    margin-inline: auto;
-  }
-
-  .about-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .about-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .about-bottom-banner {
-    margin-bottom: 0;
-    height: 330px;
-  }
-
-  .about-bottom-content {
-    padding-inline: 0;
-    width: 50%;
-  }
 
 
   .features :is(.section-title, .section-text) {
