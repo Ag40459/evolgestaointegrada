@@ -168,10 +168,36 @@ body {
 header {
   position: relative;
   z-index: 2;
-  background: linear-gradient(145deg, #f0f0f0, #cccccc);
+  background: linear-gradient(145deg, #cccccc, #f0f0f0);
   box-shadow: 4px 4px 8px #bbbbbb, -4px -4px 8px #ffffff;
   border-radius: 10px;
+  overflow: hidden;
+  /* Para garantir que o gradiente animado não transborde */
 }
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  /* Largura maior para dar espaço à animação */
+  height: 100%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+
 
 header .container {
   display: flex;
@@ -380,14 +406,14 @@ header .container {
 @media (max-width: 768px) {
   .about-list {
     flex-direction: column;
-    /* Cards um em cima do outro no modo responsivo */
+    align-items: center;
+
   }
 
   .about-card {
-    max-width: 100%;
-    /* Cards ocupam toda a largura disponível no modo responsivo */
-    height: auto;
-    /* Ajusta a altura automaticamente */
+    max-width: 350px;
+    height: 100%;
+    max-height: 400px;
   }
 }
 
@@ -413,7 +439,6 @@ header .container {
   }
 }
 
-
 .tabs {
   display: flex;
   justify-content: center;
@@ -422,12 +447,12 @@ header .container {
 
 .tab-btn {
   font-size: 0.8em;
+  font-family: var(--ff-poppins);
   padding: 10px;
   cursor: pointer;
   transition: font-size 0.3s, color 0.3s, margin-top 0.3s;
-  margin-bottom: 50px;
+  margin: 0 10px;
   color: #ffffff;
-  font-family: var(--ff-poppins);
   flex: 1;
   text-align: center;
   white-space: nowrap;
@@ -439,10 +464,15 @@ header .container {
   font-size: 1.2em;
   color: blue;
   position: relative;
-  margin-top: -10px;
-  /* Move a aba selecionada para cima */
+  margin-bottom: 50px;
   z-index: 1;
+  white-space: nowrap;
+  /* Garante que o texto não quebre */
+  flex: none;
+  /* Permite que o tamanho da aba se ajuste ao conteúdo */
 }
+
+
 
 .tab-content {
   display: none;
@@ -693,10 +723,37 @@ textarea {
 }
 
 footer {
-  background: linear-gradient(145deg, #f0f0f0, #cccccc);
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(145deg, #cccccc, #f0f0f0);
   box-shadow: 4px 4px 8px #bbbbbb, -4px -4px 8px #ffffff;
   border-radius: 10px;
+  overflow: hidden;
+  /* Para garantir que o gradiente animado não transborde */
 }
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  /* Largura maior para dar espaço à animação */
+  height: 100%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+  animation: shine-footer 3s infinite linear;
+}
+
+@keyframes shine-footer {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
+}
+
 
 
 footer img {
