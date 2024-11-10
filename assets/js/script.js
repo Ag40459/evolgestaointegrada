@@ -188,14 +188,20 @@ function showCustomModal(cardId) {
   const card = document.querySelector(`.about-card[onclick="showCustomModal('${cardId}')"]`);
   const extraDetails = card.querySelector('.extra-details').innerHTML;
 
-  currentCardContent = card.innerHTML;
+  // Cria um clone do card e remove o elemento card-text
+  const cardClone = card.cloneNode(true);
+  const cardText = cardClone.querySelector('.card-text');
+  if (cardText) {
+    cardText.remove();
+  }
+
+  currentCardContent = cardClone.innerHTML;
   document.getElementById('custom-modal-card-content').innerHTML = currentCardContent + `<p>${extraDetails}</p>`;
   document.getElementById('custom-modal').style.display = 'block';
 
   document.getElementById('customer-name').value = '';
   document.getElementById('send-btn').disabled = true;
 }
-
 
 function closeCustomModal() {
   document.getElementById('custom-modal').style.display = 'none';
@@ -304,4 +310,45 @@ window.addEventListener('load', function () {
   if (activeButton) {
     setTimeout(centerTab, 100); // Adicionar um pequeno atraso para garantir que a aba seja centralizada
   }
+});
+
+
+
+
+
+
+document.getElementById('customer-name2').addEventListener('input', function () {
+  const sendBtn = document.getElementById('cta-button2');
+  if (this.value.trim() !== '') {
+    sendBtn.disabled = false;
+  } else {
+    sendBtn.disabled = true;
+  }
+});
+
+document.getElementById('cta-button2').addEventListener('click', function () {
+  const name = document.getElementById('customer-name2').value.trim();
+  if (name !== '') {
+    const message = `Olá, meu nome é ${name}, tenho interesse na promoção de gestão mensal.`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://api.whatsapp.com/send?phone=5581997420369&text=${encodedMessage}`, '_blank');
+  }
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navbarToggleBtn = document.querySelector('[data-navbar-toggle-btn]');
+  const navbar = document.querySelector('[data-navbar]');
+
+  navbarToggleBtn.addEventListener('click', function () {
+    navbar.classList.toggle('active');
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!navbar.contains(event.target) && !navbarToggleBtn.contains(event.target)) {
+      navbar.classList.remove('active');
+    }
+  });
 });

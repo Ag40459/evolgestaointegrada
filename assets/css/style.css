@@ -261,6 +261,24 @@ header .container {
   display: none;
 }
 
+@media (min-width: 450px) {
+  .navbar {
+    left: auto;
+    width: 300px;
+  }
+}
+
+@media (min-width: 560px) {
+  .navbar-wrapper {
+    position: relative;
+  }
+
+  .navbar {
+    top: calc(100% + 15px);
+    right: 0;
+  }
+}
+
 .hero {
   position: relative;
   padding: 130px 0 0 0;
@@ -323,7 +341,7 @@ header .container {
   position: relative;
   z-index: 1;
   background: url("../images/about-bg.png") no-repeat center/cover;
-  padding: 120px 0;
+  padding: 40px 0;
   text-align: center;
 }
 
@@ -446,7 +464,7 @@ header .container {
 }
 
 .tab-btn {
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: var(--ff-poppins);
   padding: 10px;
   cursor: pointer;
@@ -461,15 +479,12 @@ header .container {
 }
 
 .tab-btn.active {
-  font-size: 1.2em;
-  color: blue;
   position: relative;
-  margin-bottom: 50px;
+  font-size: 2em;
+  margin-bottom: 100px;
   z-index: 1;
   white-space: nowrap;
-  /* Garante que o texto não quebre */
   flex: none;
-  /* Permite que o tamanho da aba se ajuste ao conteúdo */
 }
 
 
@@ -491,7 +506,7 @@ header .container {
   }
 
   .tab-btn.active {
-    font-size: 1em;
+    font-size: 2em;
     /* Tamanho maior para a aba selecionada no modo responsivo */
     margin-top: -15px;
     /* Move a aba selecionada ainda mais para cima no modo responsivo */
@@ -501,7 +516,6 @@ header .container {
     text-overflow: initial;
   }
 }
-
 
 .custom-modal {
   display: none;
@@ -526,6 +540,18 @@ header .container {
   position: relative;
 }
 
+.custom-modal-content .card-title {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.custom-modal-content .card-text {
+  text-align: justify;
+  /* Justifica o texto */
+}
+
+
+
 .custom-modal-content p,
 .custom-modal-content input,
 .custom-modal-content button {
@@ -533,7 +559,7 @@ header .container {
 }
 
 .custom-close-btn {
-  color: red;
+  color: rgba(117, 116, 116, 0.904);
   position: absolute;
   top: 10px;
   right: 20px;
@@ -559,6 +585,12 @@ header .container {
   border: none;
   padding: 10px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #customer-name {
@@ -567,11 +599,22 @@ header .container {
   padding: 5px;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  left: 52%;
+  bottom: 0%;
+  transform: translateX(-50%);
+
 }
 
 #custom-modal-card-content {
   margin-top: 20px;
-  /* Move o conteúdo do card para baixo */
+}
+
+@media (max-width: 768px) {
+  #send-btn {
+    width: 90%;
+    /* Ajusta a largura do botão para 90% do modal no modo responsivo */
+  }
 }
 
 
@@ -636,6 +679,44 @@ header .container {
 
 .cta {
   padding-bottom: 80px;
+}
+
+.cta-button2 {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1em;
+  display: block;
+  margin: 20px auto;
+  /* Centraliza o botão */
+  width: 40%;
+  /* Largura padrão fora do modo responsivo */
+  transition: width 0.3s ease;
+  /* Transição suave na mudança de largura */
+}
+
+.cta-button2:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .cta-button2 {
+    width: 80%;
+    /* Largura no modo responsivo */
+  }
+}
+
+#customer-name2 {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  width: 80%;
+  /* Largura do campo de entrada */
+  max-width: 300px;
+  /* Largura máxima */
 }
 
 .cta-card {
@@ -1189,13 +1270,6 @@ footer img {
 
   .cta-title {
     --fs-1: 42px;
-  }
-
-  .cta-form {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 30px;
   }
 
   .cta input {
