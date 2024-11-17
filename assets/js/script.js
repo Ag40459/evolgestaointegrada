@@ -10,6 +10,8 @@ menuToggleBtn.addEventListener("click", function (event) {
   elemToggleFunc(navbar);
 });
 
+
+
 const goTopBtn = document.querySelector("[data-go-top]");
 
 window.addEventListener("scroll", function () {
@@ -20,7 +22,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Evento para fechar o menu ao clicar fora dele
 document.addEventListener("click", function (event) {
   if (!navbar.contains(event.target) && !menuToggleBtn.contains(event.target)) {
     navbar.classList.remove("active");

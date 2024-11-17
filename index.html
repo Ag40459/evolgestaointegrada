@@ -30,6 +30,7 @@
       <div class="navbar-wrapper">
 
         <button class="navbar-menu-btn" data-navbar-toggle-btn>
+          <span></span> <span></span> <span></span>
           <ion-icon name="menu-outline"></ion-icon>
         </button>
 
@@ -38,7 +39,7 @@
           <ul class="navbar-list">
 
             <li class="nav-item">
-              <a href="#service" class="nav-link">Serviços</a>
+              <a href="#services" class="nav-link">Serviços</a>
             </li>
 
             <li class="nav-item">
@@ -102,13 +103,13 @@
         <div class="container">
 
           <div class="about-top">
-            <div class="tabs">
+            <div class="tabs" id="services">
               <button class="tab-btn" onclick="selectTab('logistics')">Logística</button>
               <button class="tab-btn active" onclick="selectTab('services')">Serviços</button>
               <button class="tab-btn" onclick="selectTab('branding')">Licenciamento</button>
             </div>
 
-            <div class="tab-content active" id="services">
+            <div class="tab-content active">
               <ul class="about-list">
                 <li>
                   <div class="about-card" onclick="showCustomModal('services-analise-de-loja')">
