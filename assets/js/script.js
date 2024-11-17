@@ -1,9 +1,14 @@
 'use strict';
 
+
+
 const menuToggleBtn = document.querySelector("[data-navbar-toggle-btn]");
 const navbar = document.querySelector("[data-navbar]");
 const elemToggleFunc = function (elem) { elem.classList.toggle("active"); }
-menuToggleBtn.addEventListener("click", function () { elemToggleFunc(navbar); });
+menuToggleBtn.addEventListener("click", function (event) {
+  event.stopPropagation(); // Impede que o clique no botão feche o menu
+  elemToggleFunc(navbar);
+});
 
 const goTopBtn = document.querySelector("[data-go-top]");
 
@@ -14,6 +19,19 @@ window.addEventListener("scroll", function () {
     goTopBtn.classList.remove("active");
   }
 });
+
+// Evento para fechar o menu ao clicar fora dele
+document.addEventListener("click", function (event) {
+  if (!navbar.contains(event.target) && !menuToggleBtn.contains(event.target)) {
+    navbar.classList.remove("active");
+  }
+});
+
+
+
+
+
+
 
 document.getElementById('contact-whatsapp').addEventListener('click', function () {
   const message = "Fale com a nossa equipe";
@@ -336,19 +354,3 @@ document.getElementById('cta-button2').addEventListener('click', function () {
 });
 
 
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  const navbarToggleBtn = document.querySelector('[data-navbar-toggle-btn]');
-  const navbar = document.querySelector('[data-navbar]');
-
-  navbarToggleBtn.addEventListener('click', function () {
-    navbar.classList.toggle('active');
-  });
-
-  document.addEventListener('click', function (event) {
-    if (!navbar.contains(event.target) && !navbarToggleBtn.contains(event.target)) {
-      navbar.classList.remove('active');
-    }
-  });
-});

@@ -171,31 +171,10 @@ header {
   background: linear-gradient(145deg, #cccccc, #f0f0f0);
   box-shadow: 4px 4px 8px #bbbbbb, -4px -4px 8px #ffffff;
   border-radius: 10px;
-  overflow: hidden;
-  /* Para garantir que o gradiente animado não transborde */
+  /* overflow: hidden; */
 }
 
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  /* Largura maior para dar espaço à animação */
-  height: 100%;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
-  animation: shine 3s infinite linear;
-}
 
-@keyframes shine {
-  0% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(50%);
-  }
-}
 
 
 
@@ -229,6 +208,7 @@ header .container {
   visibility: visible;
   pointer-events: all;
   max-height: 280px;
+  width: 95%;
 }
 
 .navbar-list {
@@ -821,35 +801,12 @@ footer {
   overflow: hidden;
 }
 
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  /* Largura maior para dar espaço à animação */
-  height: 100%;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
-  animation: shine-footer 3s infinite linear;
-}
-
 .footer-brand {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 0 20px 0 20px;
-}
-
-
-@keyframes shine-footer {
-  0% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(50%);
-  }
 }
 
 
