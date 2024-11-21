@@ -736,6 +736,32 @@ header .container {
   margin-inline: auto;
 }
 
+@media (min-width: 450px) {
+
+
+
+  .cta-title {
+    --fs-1: 42px;
+  }
+
+  .cta input {
+    margin-bottom: 0;
+  }
+
+  .cta .btn-secondary {
+    min-width: max-content;
+  }
+}
+
+@media (min-width: 1024px) {
+
+
+  .cta-card>* {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+}
+
 .contact {
   margin-bottom: 120px;
 }
@@ -1193,6 +1219,8 @@ footer img {
 
 @media (min-width: 450px) {
 
+
+
   :root {
 
     --fs-1: 60px;
@@ -1224,18 +1252,6 @@ footer img {
     --fs-2: 32px;
   }
 
-
-  .cta-title {
-    --fs-1: 42px;
-  }
-
-  .cta input {
-    margin-bottom: 0;
-  }
-
-  .cta .btn-secondary {
-    min-width: max-content;
-  }
 
 
   .contact-title {
@@ -1396,11 +1412,6 @@ footer img {
 
   .features-item:last-child {
     flex-direction: row-reverse;
-  }
-
-  .cta-card>* {
-    max-width: 600px;
-    margin-inline: auto;
   }
 
   .contact .container {
