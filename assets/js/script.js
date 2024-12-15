@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 const menuToggleBtn = document.querySelector("[data-navbar-toggle-btn]");
 const navbar = document.querySelector("[data-navbar]");
 const elemToggleFunc = function (elem) { elem.classList.toggle("active"); }
@@ -10,9 +8,10 @@ menuToggleBtn.addEventListener("click", function (event) {
   elemToggleFunc(navbar);
 });
 
-
-
 const goTopBtn = document.querySelector("[data-go-top]");
+
+// Inicialmente, remova a classe "active" para garantir que o botão não apareça ao carregar a página
+goTopBtn.classList.remove("active");
 
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 500) {
@@ -22,28 +21,15 @@ window.addEventListener("scroll", function () {
   }
 });
 
+
 document.addEventListener("click", function (event) {
   if (!navbar.contains(event.target) && !menuToggleBtn.contains(event.target)) {
     navbar.classList.remove("active");
   }
 });
 
-
-
-
-
-
-
 document.getElementById('contact-whatsapp').addEventListener('click', function () {
   const message = "Fale com a nossa equipe";
-  const whatsappURL = `https://wa.me/5581997420369?text=${encodeURIComponent(message)}`;
-  window.open(whatsappURL, '_blank');
-});
-
-document.getElementById('cta-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  const email = document.getElementById('email').value;
-  const message = `Quero os 7 dias Grátis. Meu email é: ${email}`;
   const whatsappURL = `https://wa.me/5581997420369?text=${encodeURIComponent(message)}`;
   window.open(whatsappURL, '_blank');
 });
@@ -197,12 +183,7 @@ window.addEventListener('resize', () => {
   setPositionByIndex();
 });
 
-
-
-
-
 let currentCardContent = '';
-
 function showCustomModal(cardId) {
   const card = document.querySelector(`.about-card[onclick="showCustomModal('${cardId}')"]`);
   const extraDetails = card.querySelector('.extra-details').innerHTML;
@@ -226,6 +207,30 @@ function closeCustomModal() {
   document.getElementById('custom-modal').style.display = 'none';
 }
 
+document.getElementById('customer-name').addEventListener('input', function () {
+  const sendBtn = document.getElementById('send-btn');
+  if (this.value.trim() !== '') {
+    sendBtn.disabled = false;
+  } else {
+    sendBtn.disabled = true;
+  }
+});
+
+function sendCustomMessage() {
+  const name = document.getElementById('customer-name').value.trim();
+  const message = `Meu nome é ${name}, tenho interesse em ${document.querySelector('.custom-modal .card-title').innerText}`;
+  const encodedMessage = encodeURIComponent(message);
+  window.open(`https://api.whatsapp.com/send?phone=5581997420369&text=${encodedMessage}`, '_blank');
+  closeCustomModal();
+}
+
+window.onclick = function (event) {
+  if (event.target == document.getElementById('custom-modal')) {
+    closeCustomModal();
+  }
+}
+
+
 window.onclick = function (event) {
   if (event.target == document.getElementById('custom-modal')) {
     closeCustomModal();
@@ -248,36 +253,6 @@ function sendCustomMessage() {
   window.open(`https://api.whatsapp.com/send?phone=5581997420369&text=${encodedMessage}`, '_blank');
   closeCustomModal();
 }
-
-
-window.onclick = function (event) {
-  if (event.target == document.getElementById('custom-modal')) {
-    closeCustomModal();
-  }
-}
-
-document.getElementById('customer-name').addEventListener('input', function () {
-  const sendBtn = document.getElementById('send-btn');
-  if (this.value.trim() !== '') {
-    sendBtn.disabled = false;
-  } else {
-    sendBtn.disabled = true;
-  }
-});
-
-function sendCustomMessage() {
-  const name = document.getElementById('customer-name').value.trim();
-  const message = `Meu nome é ${name}, tenho interesse em ${document.querySelector('.custom-modal .card-title').innerText}`;
-  const encodedMessage = encodeURIComponent(message);
-  window.open(`https://api.whatsapp.com/send?phone=5581997420369&text=${encodedMessage}`, '_blank');
-  closeCustomModal();
-}
-
-
-
-
-
-
 
 function selectTab(tabId) {
   const buttons = Array.from(document.querySelectorAll('.tab-btn'));
@@ -323,7 +298,6 @@ function centerTab() {
   }
 }
 
-// Centralizar a aba selecionada ao carregar a página
 window.addEventListener('load', function () {
   const activeButton = document.querySelector('.tab-btn.active');
   if (activeButton) {
@@ -331,19 +305,28 @@ window.addEventListener('load', function () {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const customerNameInput2 = document.getElementById('customer-name2');
+  const ctaButton2 = document.getElementById('cta-button2');
 
-
-
-
-
-document.getElementById('customer-name2').addEventListener('input', function () {
-  const sendBtn = document.getElementById('cta-button2');
-  if (this.value.trim() !== '') {
-    sendBtn.disabled = false;
+  // Certifique-se de que o elemento foi encontrado
+  if (customerNameInput2 && ctaButton2) {
+    console.log('Elementos encontrados:', customerNameInput2, ctaButton2);
+    customerNameInput2.addEventListener('input', function() {
+      console.log('Evento de input detectado:', this.value);
+      if (this.value.trim() !== '') {
+        ctaButton2.disabled = false;
+        console.log('Botão ativado.');
+      } else {
+        ctaButton2.disabled = true;
+        console.log('Botão desativado.');
+      }
+    });
   } else {
-    sendBtn.disabled = true;
+    console.error('Elemento não encontrado: customer-name2 ou cta-button2');
   }
 });
+
 
 document.getElementById('cta-button2').addEventListener('click', function () {
   const name = document.getElementById('customer-name2').value.trim();
@@ -353,8 +336,3 @@ document.getElementById('cta-button2').addEventListener('click', function () {
     window.open(`https://api.whatsapp.com/send?phone=5581997420369&text=${encodedMessage}`, '_blank');
   }
 });
-
-
-
-
-

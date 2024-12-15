@@ -103,13 +103,13 @@
         <div class="container">
 
           <div class="about-top">
-            <div class="tabs" id="services">
+            <div class="tabs">
               <button class="tab-btn" onclick="selectTab('logistics')">Logística</button>
               <button class="tab-btn active" onclick="selectTab('services')">Serviços</button>
               <button class="tab-btn" onclick="selectTab('branding')">Licenciamento</button>
             </div>
 
-            <div class="tab-content active">
+            <div class="tab-content active" id="services">
               <ul class="about-list">
                 <li>
                   <div class="about-card" onclick="showCustomModal('services-analise-de-loja')">
@@ -160,15 +160,15 @@
 
                       Cuidamos de tudo para que você. Preocupe-se apenas em despachar os pedidos<br><br>
                       Nossa equipe
-                      ainda te
-                      acompanhamos nos primeiros 07 dias a custo R$ 0,00.
+                       te
+                      acompanha nos primeiros 30 dias a um custo R$ 50,00/semana.
                     </p>
                     <p class="extra-details" style="display: none;">
 
                       Se você já tem um comércio e quer expandir com o delivery, ou se você pretende ter uma renda
                       extra,
                       o IFOOD é seu lugar.
-                      <br><br>Realizamos o cadastro da sua loja e te acompanhamos por 7 dias custo R$ 0,00
+                      <br><br>Realizamos o cadastro da sua loja e te acompanhamos por 30 dias a um custo R$ 200,00 podendo ser pagos em 4 vezes junto com o seu repasse nas quartas.
 
                     </p>
                   </div>
@@ -179,7 +179,7 @@
             <div class="tab-content" id="logistics">
               <ul class="about-list">
                 <li>
-                  <div class="about-card" onclick="showCustomModal('logistics-entregamos-para-voce')">
+                  <div class="about-card" onclick="showCustomModal('logisticas-entregamos-para-voce')">
                     <div class="card-icon">
                       <ion-icon name="rocket-outline"></ion-icon>
                     </div>
@@ -235,8 +235,7 @@
               </ul>
             </div>
 
-            <!-- Estrutura do Modal -->
-            <div id="custom-modal" class="custom-modal">
+                  <div id="custom-modal" class="custom-modal">
               <div class="custom-modal-content">
                 <span class="custom-close-btn" onclick="closeCustomModal()">&times;</span>
                 <div id="custom-modal-card-content"></div>
@@ -342,15 +341,12 @@
               🔒 **Sem compromisso de continuar após esse período**.<br><br>
               💸 **Planos de Gestão a partir de R$ 13,50/dia**.<br><br>
             </p>
-            <input type="text" id="customer-name2" placeholder="Digite seu nome"> <button class="cta-button2"
-              id="cta-button2" disabled>Saiba Mais</button>
+            <input type="text" id="customer-name2" placeholder="Digite seu nome"> 
+            <button class="cta-button2" id="cta-button2" disabled>Saiba Mais</button>
           </div>
         </div>
-
-        <!-- <form action="" class="cta-form" id="cta-form">
-
-        </form> -->
       </section>
+      
 
 
 
@@ -421,18 +417,15 @@
 
   </footer>
 
-
   <a href="#top" class="go-top active" data-go-top>
     <ion-icon name="chevron-up-outline"></ion-icon>
   </a>
 
-  <a href="https://wa.me/5581997420369?text=Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
-    class="whatsapp-button">
+  <a href="https://wa.me/5581997420369?text=Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-button" data-whatsapp-button>
     <ion-icon name="logo-whatsapp"></ion-icon>
   </a>
-
+ 
   <script src="./assets/js/script.js"></script>
-
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
