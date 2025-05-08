@@ -1,14 +1,443 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ecolote_landing_page</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evol Gestão Integrada</title>
+
+  <link rel="shortcut icon" href="./assets//images/E.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+
+
+  <header>
+
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logoEvol.svg" alt="Funel logo">
+      </a>
+
+      <div class="navbar-wrapper">
+
+        <button class="navbar-menu-btn" data-navbar-toggle-btn>
+          <span></span> <span></span> <span></span>
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <nav class="navbar" data-navbar>
+
+          <ul class="navbar-list">
+
+            <li class="nav-item">
+              <a href="#services" class="nav-link">Serviços</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#result" class="nav-link">Resultados</a>
+            </li>
+
+            <!-- <li class="nav-item">
+              <a href="#features" class="nav-link">Avaliações</a>
+            </li> -->
+
+            <li class="nav-item">
+              <a href="#promotion" class="nav-link">Promoção</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#about" class="nav-link">Sobre</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contato</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <article>
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+            <h1 class="h1 hero-title hero-title-modific">🚀 QUE TAL TURBINAR SEUS LUCROS NO IFOOD? </h1>
+            <h1 class="h1 hero-title">📞FALE COM UM DE NOSSOS ESPECIALISTA</h1>
+
+            <p class="hero-text">
+              💡 TIRE SUAS DÚVIDAS E DESCUBRA O QUANTO SUA LOJA CRESCERÁ NO IFOOD COM NOSSA GESTÃO! 💰
+            </p>
+
+            <button class="btn btn-primary btn-primary-modific" id="contact-whatsapp">FALE COM NOSSA EQUIPE</button>
+
+
+          </div>
+
+          <div class="hero-banner"></div>
+
+        </div>
+
+        <!-- <img src="./assets/images/bg.png" alt="shape" class="shape-content"> -->
+      </section>
+
+      <section class="about">
+        <div class="container">
+
+          <div class="about-top">
+            <div class="tabs">
+              <button class="tab-btn" onclick="selectTab('logistics')">Logística</button>
+              <button class="tab-btn active" onclick="selectTab('services')">Serviços</button>
+              <button class="tab-btn" onclick="selectTab('branding')">Licenciamento</button>
+            </div>
+
+            <div class="tab-content active" id="services">
+              <ul class="about-list">
+                <li>
+                  <div class="about-card" onclick="showCustomModal('services-analise-de-loja')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Analise de Loja</h3>
+                    <p class="card-text">
+                      Nossa equipe analisa cada detalhe da sua loja e da concorrência. <br><br> Desenvolve a melhor
+                      forma de aumentar sua visibilidade, dentro da realidade da sua região.
+                    </p>
+                    <p class="extra-details" style="display: none;">
+                      <br><br>
+                      1- Analise sem ajuste. R$ 99,99 🌟<br><br>
+                      2- Analise com ajuste e 30 dias de acompanhamento +
+                      GARANTIA DE RESULTADO ou seu DINHEIRO DE VOLTA. R$ 399,90
+                      <br><br>
+
+                    </p>
+
+                  </div>
+                </li>
+                <li>
+                  <div class="about-card" onclick="showCustomModal('services-gestao-de-loja')">
+                    <div class="card-icon">
+                      <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Gestão de Loja</h3>
+                    <p class="card-text">
+                      Nosso time acompanhará sua loja com feedbacks semanais e relatórios mensais.<br><br>Estaremos ao
+                      seu lado
+                      todos os dias para garantir o sucesso da sua operação.
+                    </p>
+                    <p class="extra-details" style="display: none;">Temos planos à partir de R$ 400/mês.
+                      <br><br>Gerenciamos sua loja para que se preocupe apenas com sua operação.<br><br> Plano de
+                      pagamento junto ao seu repasse<br><br>Solicite
+                      uma analise gratuita.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="about-card" onclick="showCustomModal('services-implantacao-de-loja')">
+                    <div class="card-icon">
+                      <ion-icon name="briefcase-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Implantação de Loja</h3>
+                    <p class="card-text">
+
+                      Cuidamos de tudo para que você. Preocupe-se apenas em despachar os pedidos<br><br>
+                      Nossa equipe
+                       te
+                      acompanha nos primeiros 30 dias a um custo R$ 50,00/semana.
+                    </p>
+                    <p class="extra-details" style="display: none;">
+
+                      Se você já tem um comércio e quer expandir com o delivery, ou se você pretende ter uma renda
+                      extra,
+                      o IFOOD é seu lugar.
+                      <br><br>Realizamos o cadastro da sua loja e te acompanhamos por 30 dias a um custo R$ 200,00 podendo ser pagos em 4 vezes junto com o seu repasse nas quartas.
+
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="logistics">
+              <ul class="about-list">
+                <li>
+                  <div class="about-card" onclick="showCustomModal('logisticas-entregamos-para-voce')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Entregamos Para Você</h3>
+                    <p class="card-text">
+
+                      Que tal uma equipe de entregadores a sua disposição?
+                      <br><br>
+                      Faça entrega com o menor custo para sua operação
+                      <br><br>
+                      Contamos com colaboradores de moto, bike e bike elétrica para atender melhor a sua necessidade.
+
+                    </p>
+                    <p class="extra-details" style="display: none;">
+
+                      Temos as melhores taxas do mercado.
+                      <br><br>
+                      Cosulte se já estamos na sua cidade.
+                      <br><br>
+
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="branding">
+              <ul class="about-list">
+                <li>
+                  <div class="about-card" onclick="showCustomModal('branding-licenciamos-sua-marca')">
+                    <div class="card-icon">
+                      <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 card-title">Licenciamos Sua Marca</h3>
+                    <p class="card-text">
+                      Vamos expandir a sua operação?? <br><br>
+
+                      Que tal abrir novas unidades sem o alto custo de abrir uma franquia??
+
+                    </p>
+                    <p class="extra-details" style="display: none;">
+
+                      Para você que já registrou sua marca e quer abrir novas unidades, licenciamento é sua melhor
+                      opção.
+                      <br><br>
+
+                      Nossa equipe está pronta para fazer sua operação alcançar novos patamares.
+                    </p>
+
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+                  <div id="custom-modal" class="custom-modal">
+              <div class="custom-modal-content">
+                <span class="custom-close-btn" onclick="closeCustomModal()">&times;</span>
+                <div id="custom-modal-card-content"></div>
+                <input type="text" id="customer-name" placeholder="Como prefere ser chamado(a)?">
+                <button id="send-btn" onclick="sendCustomMessage()" disabled>Quero Saber Mais</button>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="gallery-container">
+            <h2 class="h2 section-title section-title-modific" id="result">Nossos Resultados</h2>
+
+            <button class="gallery-btn prev" onclick="scrollGallery(-1)">&#10094;</button>
+            <div class="gallery-wrapper">
+              <div class="gallery">
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoVania1.png" alt="cliente1resultado1" class="gallery-image">
+                  <img src="./assets/images/resultadoVania2.png" alt="cliente1resultado2" class="gallery-image">
+                </div>
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoDeliciaDiariaSorveteria1.png" alt="cliente2resultado1"
+                    class="gallery-image">
+                  <img src="./assets/images/resultadoDeliciaDiariaSorveteria2.png" alt="cliente2resultado2"
+                    class="gallery-image">
+                </div>
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoMarmitariaGrill1.png" alt="cliente3resultado1"
+                    class="gallery-image">
+                  <img src="./assets/images/resultadoMarmitariaGrill2.png" alt="cliente3resultado2"
+                    class="gallery-image">
+                </div>
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoPastelariaFamilia1.png" alt="cliente4resultado1"
+                    class="gallery-image">
+                  <img src="./assets/images/resultadoPastelariaFamilia2.png" alt="cliente4resultado2"
+                    class="gallery-image">
+                </div>
+                <div class="gallery-pair">
+                  <img src="./assets/images/resultadoBistro1.png" alt="cliente5resultado1" class="gallery-image">
+                  <img src="./assets/images/resultadoBistro2.png" alt="cliente5resultado2" class="gallery-image">
+                </div>
+              </div>
+            </div>
+            <button class="gallery-btn next" onclick="scrollGallery(1)">&#10095;</button>
+          </div>
+
+
+
+
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="container">
+
+          <ul class="features-list">
+
+            <li class="features-item">
+
+              <figure class="features-item-banner">
+                <img src="./assets/images/grupoPessoas2.jpeg" alt="feature banner">
+              </figure>
+
+              <div class="feature-item-content">
+                <h3 class="h2 item-title" id="about">Evol Gestão Integrada</h3>
+
+                <p class="item-text">
+                  Com mais de dois anos de atuação no mercado, desenvolvemos uma metodologia exclusiva, capaz de
+                  atender desde negócios recém-abertos até grandes redes com multiplas unidades. 💪<br></br>
+
+                  Nossa equipe é composta por gestores qualificados, e está empenhada em apoiar lojas de todo o
+                  Brasil.🎉 <br></br>
+
+                  Oferecemos soluções especializadas de suporte e consultoria para lojas de
+                  delivery no iFood. 🚀<br></br>
+
+
+
+                  Estamos prontos para impulsionar o sucesso do seu negócio! 📈
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <section class="cta">
+        <div class="container">
+          <div class="cta-card" id="promotion">
+            <h3 class="cta-title">Teste Grátis Por 15 dias</h3>
+            <p class="cta-text">
+              🎉 **PROMOÇÃO Especial!** 🎉<br><br>
+              Assine nosso plano de Gestão Mensal e tenha sua loja cuidada por nossa equipe especializada por 30
+              dias.<br><br>
+              📅 **Comece a pagar apenas após a segunda semana** – a primeira e segunda semana é totalmente
+              **GRÁTIS**!<br><br>
+              🔒 **Sem compromisso de continuar após esse período**.<br><br>
+              💸 **Planos de Gestão a partir de R$ 13,50/dia**.<br><br>
+            </p>
+            <input type="text" id="customer-name2" placeholder="Digite seu nome"> 
+            <button class="cta-button2" id="cta-button2" disabled>Saiba Mais</button>
+          </div>
+        </div>
+      </section>
+      
+
+
+
+    </article>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="container-footer">
+
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img class="logoFooter" src="./assets/images/logoEvol.svg" alt="Funel logo">
+          </a>
+
+          <div style="text-align: center;">
+            <p class="footer-text">
+              Siga-nos</p>
+
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-github"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+          <a href="https://parceiros.ifood.com.br/restaurante?bid=YLBYQWJ" class="h4 link-title">Cadastre-se no
+            Ifood</a>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2022 <a href="#">Evol Gestão Integrada</a> | Todos os Direitos
+        Reservados
+      </p>
+      <p class="copyright">comercial@evolgestaointegrada.com.br</p>
+    </div>
+
+  </footer>
+
+  <a href="#top" class="go-top active" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+  <a href="https://wa.me/5581997420369?text=Vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." class="whatsapp-button" data-whatsapp-button>
+    <ion-icon name="logo-whatsapp"></ion-icon>
+  </a>
+ 
+  <script src="./assets/js/script.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <img id="modalImage1" class="modal-image">
+    <img id="modalImage2" class="modal-image">
+  </div>
+</div>
+
+</html>
