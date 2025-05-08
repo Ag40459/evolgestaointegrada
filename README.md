@@ -1,50 +1,66 @@
-# React + TypeScript + Vite
+<div align="center">
+  
+___ 
+<p align="center">
+<a href="HTML 5 url">
+    <img alt="HTML 5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
+</a>
+<a href="CSS 3 url" >
+    <img alt="CSS 3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
+</a>
+<a href="JavaScript url" >
+    <img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
+</a>
+<a href="Figma url" >
+    <img alt="FIGMA" src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" />
+</a>
+  <a href="MIT License url" >
+     <img alt = "MIT LICENSE" src="https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge" />
+    </a>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <br />
+  <br />
+  
+  <img src="./readme-images/project-logo.png" />
 
-## Expanding the ESLint configuration
+  <br />
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  <h1 align="center">Funel - Agency landing page</h1>
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  Funel is a fully responsive digital agency landing page, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+</div>
+
+<br />
+<br />
+
+### Demo Screeshots
+
+![Funel Desktop Demo](./readme-images/desktop.png "Desktop Demo")
+![Funel Mobile Demo](./readme-images/mobile.png "Mobile Demo")
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+
+
+
+<!-- License -->
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+<!-- Acknowledgments -->
+## Acknowledgments
+Thank you to the HTML5, CSS3, JavaScript And Figma communities for providing excellent tools and resources.
+
+<!-- Contact -->
+## Contact
+For questions or feedback, please contact [Amit Ashok Swain](mailto:business.amitswain@gmail.com).
